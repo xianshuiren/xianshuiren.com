@@ -4,6 +4,39 @@
   
     
     <entry>
+      <title>Eclipse下开发环境配置</title>
+      <link href="/2019/11/30/2019-11-eclipse-xia-kai-fa-huan-jing-pei-zhi/"/>
+      <url>/2019/11/30/2019-11-eclipse-xia-kai-fa-huan-jing-pei-zhi/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Eclipse下开发环境配置"><a href="#Eclipse下开发环境配置" class="headerlink" title="Eclipse下开发环境配置"></a>Eclipse下开发环境配置</h1><h2 id="1-maven仓库的配置"><a href="#1-maven仓库的配置" class="headerlink" title="1. maven仓库的配置"></a>1. maven仓库的配置</h2><hr><ol><li>Maven 官网下载  <a href="https://maven.apache.org/" target="_blank" rel="noopener">https://maven.apache.org/</a> </li></ol><p><img src="1.png" alt></p><ol start="2"><li>然后进行解压，在文件下新建maven-repository 文件夹 这就是以后你本地Maven仓库 </li></ol><p><img src="2.png" alt></p><ol start="3"><li>修改config文件下setting.xml文件 </li></ol><p><img src="3.png" alt></p><p>路径修改为你刚才新建的maven-repssitort文件路径</p><ol start="4"><li><p>然后配置Maven环境变量</p><p>新建变量名 MAVEN_HOME,然后把路劲放在变量值里面</p><p><img src="4.png" alt></p><p>在path后面加上%MAVEN_HOME%\bin\； </p></li></ol><p><img src="5.png" alt></p><p> 检查Maven环境变量是否配置成功 cmd输入mvn -v如下 </p><p><img src="6.png" alt></p><ol start="5"><li>在eclipse中配置maven   windows–Preferences </li></ol><p><img src="7.png" alt></p><p><img src="8.png" alt></p><ol start="6"><li>OK 到此我们的eclipse maven 配置成功 </li></ol><h2 id="2-java环境的配置"><a href="#2-java环境的配置" class="headerlink" title="2. java环境的配置"></a>2. java环境的配置</h2><ol><li><p>下载java安装包   <a href="https://www.oracle.com/technetwork/cn/java/javase/downloads/index.html" target="_blank" rel="noopener">https://www.oracle.com/technetwork/cn/java/javase/downloads/index.html</a> </p><p>接下来选择对应的版本，我选择windows 64位版，然后勾上同意协议，点击下载链接 </p></li></ol><p><img src="11.png" alt="11"></p><p><img src="12.png" alt="12"></p><ol start="2"><li><p>下载完成后安装即可</p><p>接下来就是windows程序的通用安装过程了，一路下一步，其中可以选择安装的路径 </p></li></ol><p><img src="13.png" alt="13"></p><p> 整个过程分为安装安装jre（java运行时）和jdk（java开发者工具）两个过程，如果你更改了安装路径，需要注意把两个改成一样的 </p><ol start="3"><li>配置系统环境变量： 右键我的电脑 -》 属性 -》 高级系统设置 -》 系统变量</li></ol><p>变量设置参数如下：（要根据自己实际路径进行配置）</p><p>变量名：<strong>JAVA_HOME</strong></p><p>变量值：<strong>C:\Program Files\Java\jdk1.8.0_231</strong>     // 要根据自己的实际jdk路径配置</p><p>变量名：<strong>CLASSPATH</strong></p><p>变量值：<strong>.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;</strong>     //记得前面有个”.”</p><p>变量名：<strong>Path</strong></p><p>变量值：<strong>%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;</strong>  &lt;—注意win10中path变量是分条显示的需要分别添加  或者分别添加下面两个绝对路径变量</p><p>C:\Program Files\Java\jdk1.8.0_231\jre\bin   /  C:\Program Files\Java\jdk1.8.0_231\bin </p><ol start="4"><li>测试JDK是否安装成功</li></ol><p>1、”开始”-&gt;”运行”，键入”cmd”；</p><p>2、键入命令: <strong>java -version</strong>、<strong>java</strong>、<strong>javac</strong> 几个命令，有版本信息，说明环境变量配置成功；</p><ol start="5"><li><p>在eclipse中配置JDKA </p><p>打开window–&gt;preferences，弹出的页面里选择java–&gt;Installed JREs，打开如下图界面 </p></li></ol><p><img src="14.png" alt="14"></p><p> 然后点击右侧add按钮，打开add jre对话框： </p><p><img src="15.png" alt="15"></p><p> 点击下一步，打开jre路径选择对话框 </p><p><img src="16.png" alt="16"></p><p> 选择JRE home之后，自动会填充JRE name和下面的jar，这里也可以设置vm参数，一般直接点击finish完成即可。到此新的JRE已经配置完成，如果配置了多个JDK，可以勾选一个作为默认，如下图： </p><p><img src="17.png" alt="17"></p><p>设置全局编译版本</p><p> 打开window–&gt;preferences，弹出的页面里选择java–&gt;Compiler，打开如下图界面： </p><p><img src="18.png" alt="18"></p><p>web项目里设置编译版本</p><p><img src="19.png" alt="19"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 配置 </category>
+          
+          <category> eclipse </category>
+          
+          <category> 开发环境 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 配置 </tag>
+            
+            <tag> eclipse </tag>
+            
+            <tag> 开发环境 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>article title</title>
       <link href="/2019/11/28/article-title/"/>
       <url>/2019/11/28/article-title/</url>

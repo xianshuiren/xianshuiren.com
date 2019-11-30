@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://dddragon.me/"/>
-  <updated>2019-11-28T14:33:38.169Z</updated>
+  <updated>2019-11-30T08:14:45.777Z</updated>
   <id>https://dddragon.me/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Eclipse下开发环境配置</title>
+    <link href="https://dddragon.me/2019/11/30/2019-11-eclipse-xia-kai-fa-huan-jing-pei-zhi/"/>
+    <id>https://dddragon.me/2019/11/30/2019-11-eclipse-xia-kai-fa-huan-jing-pei-zhi/</id>
+    <published>2019-11-30T06:07:09.000Z</published>
+    <updated>2019-11-30T08:14:45.777Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Eclipse下开发环境配置&quot;&gt;&lt;a href=&quot;#Eclipse下开发环境配置&quot; class=&quot;headerlink&quot; title=&quot;Eclipse下开发环境配置&quot;&gt;&lt;/a&gt;Eclipse下开发环境配置&lt;/h1&gt;&lt;h2 id=&quot;1-maven仓库的配置&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="配置" scheme="https://dddragon.me/categories/%E9%85%8D%E7%BD%AE/"/>
+    
+      <category term="eclipse" scheme="https://dddragon.me/categories/%E9%85%8D%E7%BD%AE/eclipse/"/>
+    
+      <category term="开发环境" scheme="https://dddragon.me/categories/%E9%85%8D%E7%BD%AE/eclipse/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
+    
+    
+      <category term="配置" scheme="https://dddragon.me/tags/%E9%85%8D%E7%BD%AE/"/>
+    
+      <category term="eclipse" scheme="https://dddragon.me/tags/eclipse/"/>
+    
+      <category term="开发环境" scheme="https://dddragon.me/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
+    
+  </entry>
   
   <entry>
     <title>article title</title>
