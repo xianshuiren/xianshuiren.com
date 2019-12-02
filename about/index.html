@@ -500,7 +500,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
         },
         xAxis: {
             type: 'category',
-            data: ["2018-11","2018-12","2019-01","2019-02","2019-03","2019-04","2019-05","2019-06","2019-07","2019-08","2019-09","2019-10","2019-11"]
+            data: ["2018-12","2019-01","2019-02","2019-03","2019-04","2019-05","2019-06","2019-07","2019-08","2019-09","2019-10","2019-11","2019-12"]
         },
         yAxis: {
             type: 'value',
@@ -510,7 +510,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 name: '文章篇数',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [0,0,0,0,0,0,0,0,0,0,0,0,2],
+                data: [0,0,0,0,0,0,0,0,0,0,0,2,0],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
@@ -992,9 +992,8 @@ $(function () {
     $(document).ready(function () {
 
         var int = setInterval(fixCount, 50);
-        var pvcountOffset = 0;
-        var uvcountOffset = 0;
-
+        var pvcountOffset = 800;
+        var uvcountOffset = 200;
         function fixCount() {
             if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
                 $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset);
@@ -1045,6 +1044,6 @@ $(function () {
 </script>
     
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"live2d-widget-model-shizuku"},"display":{"position":"left","width":200,"height":400},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
+</body>
 
 </html>
