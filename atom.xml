@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>惡魔破壞龍</title>
+  <title>D.D.D.</title>
   
   <subtitle>Demon-Destroys-Dragon</subtitle>
   <link href="/atom.xml" rel="self"/>
@@ -10,7 +10,7 @@
   <id>https://dddragon.me/</id>
   
   <author>
-    <name>惡魔破壞龍</name>
+    <name>D.D.D.</name>
     
   </author>
   
@@ -55,7 +55,7 @@
     <link href="https://dddragon.me/2019/11/28/article-title/"/>
     <id>https://dddragon.me/2019/11/28/article-title/</id>
     <published>2019-11-28T14:33:38.000Z</published>
-    <updated>2019-12-30T15:26:02.138Z</updated>
+    <updated>2020-01-12T12:23:18.518Z</updated>
     
     <summary type="html">
     
@@ -63,13 +63,20 @@
       
         
         
-          &lt;p&gt;13&lt;/p&gt;
-&lt;pre class=&quot;line-numbers language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span
+          &lt;h1 id=&quot;测试&quot;&gt;&lt;a href=&quot;#测试&quot; class=&quot;headerlink&quot; title=&quot;测试&quot;&gt;&lt;/a&gt;测试&lt;/h1&gt;&lt;p&gt;测试 测试  测试  测试  测试  测试  测试  测试  测试  测试  测试  测试  测试  测试  测试  测试  测试  测试
         
       
     
     </summary>
     
+      <category term="文章" scheme="https://dddragon.me/categories/%E6%96%87%E7%AB%A0/"/>
+    
+      <category term="内容" scheme="https://dddragon.me/categories/%E6%96%87%E7%AB%A0/%E5%86%85%E5%AE%B9/"/>
+    
+    
+      <category term="测试" scheme="https://dddragon.me/tags/%E6%B5%8B%E8%AF%95/"/>
+    
+      <category term="歌曲" scheme="https://dddragon.me/tags/%E6%AD%8C%E6%9B%B2/"/>
     
   </entry>
   
