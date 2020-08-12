@@ -1,0 +1,1900 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="html学习03_js基础, 仙水忍 仙水忍博客 仙水博客 自律的鱼">
+    <meta name="description" content="一 JavaScript概述作用：用户和页面交互效果
+特点：js是一个基于对象弱类型的脚本语言，浏览器直接解释运行的
+组成：ECMAScript、BOM、DOM
+1.1 JavaScript作用
+
+
+技术
+作用
+
+
+
+HTML
+用于页面的搭">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="baidu-site-verification" content="XByRFWJPnr">
+	
+    <title>html学习03_js基础 | 仙水忍</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+    <style type="text/css">
+        
+    </style>
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?46e79e71af0709a5b9106bf20cecc493";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper head-container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">仙水忍</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于我</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list" style="zoom: 0.6;"></i>
+      
+      <span>媒体</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/medias/musics">
+          
+          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>音乐</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/medias/videos">
+          
+          <i class="fas fa-film" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>视频</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/medias/books">
+          
+          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>阅读</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/medias/galleries">
+          
+          <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>图片</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list" style="zoom: 0.6;"></i>
+      
+      <span>其他</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/others/download">
+          
+          <i class="fas fa-download" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>下载</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">仙水忍</div>
+        <div class="logo-desc">
+            
+            仙水忍_仙水忍博客是一个专注于计算机技术及其他资源分享的个人博客，站内相关资源均由本人整理自网络，欢迎学习交流及分享各种资源。
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list"></i>
+			
+			媒体
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>   
+				
+                  <a href="/medias/musics " style="margin-left:50px";>
+				  
+				   <i class="fa fas fa-music" style="position: absolute;left:28px" ></i>
+			      
+		          <span>音乐</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/medias/videos " style="margin-left:50px";>
+				  
+				   <i class="fa fas fa-film" style="position: absolute;left:28px" ></i>
+			      
+		          <span>视频</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/medias/books " style="margin-left:50px";>
+				  
+				   <i class="fa fas fa-book" style="position: absolute;left:28px" ></i>
+			      
+		          <span>阅读</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/medias/galleries " style="margin-left:50px";>
+				  
+				   <i class="fa fas fa-image" style="position: absolute;left:28px" ></i>
+			      
+		          <span>图片</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list"></i>
+			
+			其他
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>   
+				
+                  <a href="/others/download " style="margin-left:50px";>
+				  
+				   <i class="fa fas fa-download" style="position: absolute;left:28px" ></i>
+			      
+		          <span>下载</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/fishyo9" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/fishyo9" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/26.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        html学习03_js基础
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/JS语法/">
+                                <span class="chip bg-color">JS语法</span>
+                            </a>
+                        
+                            <a href="/tags/JS事件/">
+                                <span class="chip bg-color">JS事件</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/HTML/" class="post-category">
+                                HTML
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-02-27
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    14 分
+                </div>
+                
+				
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+            
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="一-JavaScript概述"><a href="#一-JavaScript概述" class="headerlink" title="一 JavaScript概述"></a>一 JavaScript概述</h2><p>作用：用户和页面交互效果</p>
+<p>特点：js是一个基于对象弱类型的脚本语言，浏览器直接解释运行的</p>
+<p>组成：ECMAScript、BOM、DOM</p>
+<h3 id="1-1-JavaScript作用"><a href="#1-1-JavaScript作用" class="headerlink" title="1.1 JavaScript作用"></a>1.1 JavaScript作用</h3><table>
+<thead>
+<tr>
+<th align="left">技术</th>
+<th align="left">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">HTML</td>
+<td align="left">用于页面的搭建</td>
+</tr>
+<tr>
+<td align="left">CSS</td>
+<td align="left">用于页面的美化</td>
+</tr>
+<tr>
+<td align="left">javaScript</td>
+<td align="left">用户与页面的交互</td>
+</tr>
+</tbody></table>
+<h3 id="1-2-JavaScript的特点"><a href="#1-2-JavaScript的特点" class="headerlink" title="1.2 JavaScript的特点"></a>1.2 JavaScript的特点</h3><p>js是一个弱类型的 脚本语言，浏览器直接解析运行</p>
+<table>
+<thead>
+<tr>
+<th align="center">特点</th>
+<th align="left"><strong>Java</strong></th>
+<th align="left"><strong>javaScript</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><strong>面向对象</strong></td>
+<td align="left">完全面向对象的语言：继承、封装、多态</td>
+<td align="left">基于对象的语言，不完全符合面向对象的思想</td>
+</tr>
+<tr>
+<td align="center"><strong>运行方式</strong></td>
+<td align="left">编译型，运行过程需要生成字节码文件</td>
+<td align="left">解释型语言，不会生成中间文件，解释一定行数，再执行。</td>
+</tr>
+<tr>
+<td align="center"><strong>跨平台</strong></td>
+<td align="left">安装了JVM就可以运行在不同的操作系统中</td>
+<td align="left">只要有浏览器的地方就可以运行</td>
+</tr>
+<tr>
+<td align="center"><strong>大小写</strong></td>
+<td align="left">区分大小写</td>
+<td align="left">区分大小写</td>
+</tr>
+<tr>
+<td align="center"><strong>数据类型</strong></td>
+<td align="left">强类型语言，不同的数据类型有严格区分</td>
+<td align="left">弱类型语言，不同类型的数据可以直接赋值给同一个变量。</td>
+</tr>
+</tbody></table>
+<h3 id="1-3-JavaScript的语法组成"><a href="#1-3-JavaScript的语法组成" class="headerlink" title="1.3 JavaScript的语法组成"></a>1.3 JavaScript的语法组成</h3><table>
+<thead>
+<tr>
+<th align="left"><strong>组成部分</strong></th>
+<th align="left"><strong>作用</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>ECMA Script</strong></td>
+<td align="left">构成了JS核心的语法基础</td>
+</tr>
+<tr>
+<td align="left"><strong>BOM</strong></td>
+<td align="left">Browser Object Model 浏览器对象模型，用来操作浏览器上的对象</td>
+</tr>
+<tr>
+<td align="left"><strong>DOM</strong></td>
+<td align="left">Document Object Model 文档对象模型，用来操作网页中的 元素（标签）</td>
+</tr>
+</tbody></table>
+<h2 id="二-JavaScript基础语法"><a href="#二-JavaScript基础语法" class="headerlink" title="二 JavaScript基础语法"></a>二 JavaScript基础语法</h2><h3 id="2-1-html与js结合方式"><a href="#2-1-html与js结合方式" class="headerlink" title="2.1 html与js结合方式"></a>2.1 html与js结合方式</h3><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;zh-CN&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;01_html与js结合方式&lt;/title&gt;
+    &lt;!--
+        type=&quot;text/javascript&quot;（默认），当浏览器加载到此标签，解析器改为js
+    --&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        // js代码   文档 document对象
+        document.write(&#39;&lt;h3&gt;你好，传智播客&lt;/h3&gt;&#39;);
+    &lt;/script&gt;
+    &lt;script src=&quot;../js/myjs.js&quot;&gt;
+        document.write(&#39;&lt;h3&gt;我是外部标签引入，又在标签体内编写js代码&lt;/h3&gt;&#39;);
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;!--
+    html与js结合方式
+        1）内部脚本
+            格式：使用script标签，在标签体内编写js代码
+        2）外部脚本
+            格式：使用script标签，在src属性中引入外部的js文件
+
+
+        注意：
+            1）script标签可以在页面的任意位置，推荐放在body下方 （浏览器加载顺序 自上而下）
+                在企业开发中 一般情况下 css在head，js在body下方
+            2）script标签可以出现多次，浏览器依次加载解析运行
+            3）如果使用script标签中的src属性，那么标签体内的js代码不再被浏览器加载解析
+--&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre><h3 id="2-2-js变量的定义"><a href="#2-2-js变量的定义" class="headerlink" title="2.2 js变量的定义"></a>2.2 js变量的定义</h3><p>java是强类型语言，注重变量的定义，所以在java中定义变量类型的方式如下</p>
+<pre><code>// 整型
+int i = 1314;
+// 浮点型
+double d = 521.1314;
+// 字符型
+char c =&#39;c&#39;;
+// 字符串型
+String str = &quot;用心做教育&quot;;
+//布尔型
+boolean b = true;</code></pre><p>js是弱类型语言，不注重变量的定义，所以在js中定义变量的类型方式如下</p>
+<pre><code>&lt;script&gt;
+    // 整型
+    var i = 1234;  // es6 提供了块级作用域
+    // 浮点型
+    var d = 123.321;
+    // 字符型
+    // 补充知识点：在js中，没有字符只有字符串 单引号和双引号都可以
+    var c = &#39;ccccc&#39;;
+    // 字符串
+    var str = &quot;传智播客，用心做教育...&quot;;
+    // 布尔型
+    // 我们在定义变量时可以省略 var （默认）
+    b = true;
+
+&lt;/script&gt;</code></pre><h3 id="2-3-js数据类型"><a href="#2-3-js数据类型" class="headerlink" title="2.3 js数据类型"></a>2.3 js数据类型</h3><p>js与java一样，数据类型也分为基本数据类型（原始数据类型）和引用数据类型</p>
+<h4 id="a）原始数据类型（5种）"><a href="#a）原始数据类型（5种）" class="headerlink" title="a）原始数据类型（5种）"></a>a）原始数据类型（5种）</h4><pre><code>number：数值类型（整型和浮点型）
+string：字符串型（字符和字符串）
+boolean：布尔型
+null：空值 例如：var a = null; // 引用数据类型的占位符  Object
+undefined：未定义 例如：var a;</code></pre><h4 id="b）引用数据类型"><a href="#b）引用数据类型" class="headerlink" title="b）引用数据类型"></a>b）引用数据类型</h4><p>js与java一样，使用new关键字来创建一个对象</p>
+<pre><code>// 上帝对象
+var obj = new Object();
+// 日期对象
+var date = new Date();</code></pre><h4 id="c）typeof操作符"><a href="#c）typeof操作符" class="headerlink" title="c）typeof操作符"></a>c）typeof操作符</h4><p>作用：判断变量的数据类型</p>
+<p>格式：<code>typeof 变量名 或者 typeof(变量名)</code>；</p>
+<pre><code>&lt;script&gt;
+    // 整型
+    var i = 1234;
+    // 在java中  sout=System.out.println  （控制台）-----&gt; console.log(.....); （控制台）
+    // 在js中，一行代码结束可以省略分号，不建议
+    console.log(&quot;整型：&quot;+typeof (i))
+    // 浮点型
+    var d = 123.321;
+    console.log(&quot;浮点型：&quot;+typeof (d));
+    // 字符型
+    // 补充知识点：在js中，没有字符只有字符串 单引号和双引号都可以
+    var c = &#39;ccccc&#39;;
+    console.log(&quot;字符型：&quot;+typeof (c));
+    // 字符串
+    var str = &quot;传智播客，用心做教育...&quot;;
+    console.log(&quot;字符串：&quot;+typeof (str));
+    // 布尔型
+    // 我们在定义变量时可以省略 var （默认）
+    b = true;
+    console.log(&quot;布尔型：&quot; + typeof b);
+    // 空值
+    var n = null;
+    console.log(&quot;空值：&quot; + typeof n);
+    // 未定义
+    var u;
+    console.log(&quot;未定义：&quot; + typeof u);
+    // 引用数据类型
+    // 在js种，使用var声明的变量，可以多次定义
+    var u = new Date();
+    console.log(&quot;引用数据类型：&quot; + typeof u);
+
+&lt;/script&gt;</code></pre><h3 id="2-4-js运算符"><a href="#2-4-js运算符" class="headerlink" title="2.4 js运算符"></a>2.4 js运算符</h3><p>js与java的运算符一样，什么算数运算符、赋值运算符、逻辑运算符等等，不用把这些运算符都记住，写程序时自然会用就OK。</p>
+<p><strong>a）算术运算符</strong> ：<code>+ - * / % ++ --</code></p>
+<p><strong>b）赋值运算符</strong>：<code>= += -= *= /=</code></p>
+<p><strong>c）比较运算符</strong>：<code>&gt; &lt; == === != !==</code></p>
+<p><strong>d）逻辑运算符</strong>：<code>&amp;&amp; || !</code></p>
+<p><strong>e）三目运算符</strong>：<code>条件表达式？为真:为假</code></p>
+<p>下面说几个与java不一样的js运算符：</p>
+<pre><code>&lt;script&gt;
+    // 算术运算符
+    // 在js中，字符串可以和数值进行数学运算，底层实现了转换技术
+    var a = 10;
+    var b = &#39;3&#39;;
+    console.log(a + b);// 字符串拼接
+    console.log(a - b);
+    console.log(a * b);
+    console.log(a / b);//不再是整除，保留小数位 （后期数据存储的价格 单位是分）
+    // += *=
+
+    // 比较运算符
+    var c = &quot;10&quot;;
+    console.log(a == c); // 返回结果 true 比较内容
+    console.log(a === c);// 返回结果 false  全等运算符（恒等） 比较的类型和内容
+
+    // != !==
+    console.log(a != c); // 返回结果 false
+    console.log(a !== c);// 返回结果  true
+&lt;/script&gt;</code></pre><h3 id="2-5-流程控制语句"><a href="#2-5-流程控制语句" class="headerlink" title="2.5 流程控制语句"></a>2.5 流程控制语句</h3><p>在高级语言中：顺序、分支、循环</p>
+<h4 id="a）if判断"><a href="#a）if判断" class="headerlink" title="a）if判断"></a>a）if判断</h4><pre><code>if(条件表达式){
+    // js代码
+}else if(条件表达式){
+    // js代码
+}else{
+    // js代码
+}
+&lt;script&gt;
+    // 条件表达式
+    /*
+    *   数值类型：非0为真
+    *   字符串类型：非空串为真
+    *   变量： null 和 undefined 都为假
+    *
+    * */
+    //  var flag = false;
+    // flag = 0;
+    // flag = &quot; &quot;;
+    // flag =null;
+    flag = undefined;
+    // if判断
+    if (flag) {
+        document.write(&#39;&lt;h3&gt;为真&lt;/h3&gt;&#39;);
+    } else {
+        document.write(&#39;&lt;h3&gt;为假&lt;/h3&gt;&#39;);
+    }
+&lt;/script&gt;</code></pre><h4 id="b）循环"><a href="#b）循环" class="headerlink" title="b）循环"></a>b）循环</h4><pre><code>// for
+for(var i =0;i &lt; length; i ++){
+    // 循环体
+}
+// while
+while(条件表达式){
+    // 循环体
+}
+// do..while
+do{
+    // 循环体
+    // continue; 跳出本次循环
+    // break;跳出整个循环
+}while(条件表达式);
+&lt;script&gt;
+    // for
+    for (var i = 0; i &lt; 5; i++) {
+        document.write(i + &quot;&lt;br/&gt;&quot;);
+        //document.writeln(i);
+    }
+    // 拓展知识点；使用var声明的变量 全局变量
+    console.log(i);
+    // 在js 6的版本中，提供 另外一种变量的let声明  （块级作用域）  这不是局部变量
+    for (let j = 0; j &lt; 5; j++) {
+        document.write(j + &#39;&lt;br/&gt;&#39;);
+    }
+    // j is not defined
+    console.log(j);
+&lt;/script&gt;
+</code></pre><h3 id="2-8-函数（方法）使用"><a href="#2-8-函数（方法）使用" class="headerlink" title="2.8 函数（方法）使用"></a>2.8 函数（方法）使用</h3><h4 id="a）普通函数"><a href="#a）普通函数" class="headerlink" title="a）普通函数"></a>a）普通函数</h4><pre><code>// 格式
+function 函数名(参数列表){
+    // js代码
+    [return 返回值;]
+}
+&lt;script&gt;
+    // 普通函数
+
+    // 注意：在js中没有方法重载，重名的方法会被覆盖
+    // 再来一个3个数相加的和
+    function sum(a, b, c) {
+        return a + b + c;
+    }
+    // 来一个2个数相加的和
+    function sum(a, b) {
+        // 在js函数中，内部有一个arguments(数组)对象，获取实际的参数列表
+        console.log(arguments);
+        console.log(arguments[0]);
+        console.log(arguments[1]);
+        console.log(arguments[2]);
+        console.log(arguments[3]);
+        return a + b;
+    }
+
+    // NaN not a number 这不是一个数
+    // 不会报错，弱类型语言  我们在调用方法传递的实际参数个数与定义方式无关
+    console.log(&quot;返回结果：&quot;+sum(5,10,15,20,25,30));
+&lt;/script&gt;
+</code></pre><h4 id="b）匿名函数"><a href="#b）匿名函数" class="headerlink" title="b）匿名函数"></a>b）匿名函数</h4><pre><code>// 格式   一会我会讲js事件                  // 匿名函数，通常与事件结合使用
+var fun = function (参数列表){
+    [return 返回值;]
+}
+&lt;script&gt;
+    // 匿名函数
+    var fun = function (name) {
+        console.log(name + &quot;喜欢购物&quot;);
+    }
+
+    fun(&#39;陈浩&#39;);
+&lt;/script&gt;          
+
+&lt;input id=&quot;myBtn&quot; type=&quot;button&quot; value=&quot;&quot; /&gt;
+&lt;script&gt;
+    document.getElementById(&#39;myBtn&#39;).onclick=function(){
+        // js代码
+    }
+&lt;/script&gt;
+</code></pre><h4 id="c）变量作用域"><a href="#c）变量作用域" class="headerlink" title="c）变量作用域"></a>c）变量作用域</h4><pre><code>&lt;!--
+    变量作用域：
+        全局变量
+            特点：作用域范围在整个页面
+        块级变量
+            特点：在我们局部范围 （要求浏览器的版本高）
+        局部变量
+            特点：在函数中，函数执行完毕变量销毁
+            特殊：在函数中，如果未使用var声明变量，此变量默认为全局变量
+--&gt;
+
+&lt;script&gt;
+   var a = 5;
+
+    function show() {
+        var b = 10;
+        console.log(&quot;我在函数内输出的局部变量b：&quot; + b);
+        c = 15;
+        console.log(&quot;我在函数内输出的未声明c：&quot; + c);
+    } 
+
+    show();
+    // b is not defined
+    // console.log(&quot;我在函数外输出的局部变量b：&quot; + b);
+    console.log(&quot;我在函数外输出的未声明c：&quot; + c);
+&lt;/script&gt;
+&lt;script&gt;
+    console.log(&quot;我是全局变量:&quot; + a);
+&lt;/script&gt;
+</code></pre><h2 id="三-JavaScript事件"><a href="#三-JavaScript事件" class="headerlink" title="三 JavaScript事件"></a>三 JavaScript事件</h2><h3 id="3-1-作用"><a href="#3-1-作用" class="headerlink" title="3.1 作用"></a>3.1 作用</h3><p>js通过事件监听用户的行为，结合函数完成页面的交互效果</p>
+<h3 id="3-2-常见事件"><a href="#3-2-常见事件" class="headerlink" title="3.2 常见事件"></a>3.2 常见事件</h3><table>
+<thead>
+<tr>
+<th align="left"><strong>属性</strong></th>
+<th align="left"><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">onblur</td>
+<td align="left">元素失去焦点</td>
+</tr>
+<tr>
+<td align="left">onfocus</td>
+<td align="left">元素获得焦点</td>
+</tr>
+<tr>
+<td align="left">onchange</td>
+<td align="left">用户改变域的内容</td>
+</tr>
+<tr>
+<td align="left">onclick</td>
+<td align="left">鼠标点击某个对象</td>
+</tr>
+<tr>
+<td align="left">ondblclick</td>
+<td align="left">鼠标双击某个对象</td>
+</tr>
+<tr>
+<td align="left">onkeydown</td>
+<td align="left">某个键盘的键被按下</td>
+</tr>
+<tr>
+<td align="left">onkeyup</td>
+<td align="left">某个键盘的键被松开</td>
+</tr>
+<tr>
+<td align="left">onload</td>
+<td align="left">某个页面或图像被完成加载</td>
+</tr>
+<tr>
+<td align="left">onmousedown</td>
+<td align="left">某个鼠标按键被按下</td>
+</tr>
+<tr>
+<td align="left">onmouseout</td>
+<td align="left">鼠标从某元素移开</td>
+</tr>
+<tr>
+<td align="left">onmouseover</td>
+<td align="left">鼠标被移到某元素之上</td>
+</tr>
+<tr>
+<td align="left">onmouseup</td>
+<td align="left">某个鼠标按键被松开</td>
+</tr>
+<tr>
+<td align="left">onsubmit</td>
+<td align="left">提交按钮被点击</td>
+</tr>
+</tbody></table>
+<h3 id="3-3-事件注册方式"><a href="#3-3-事件注册方式" class="headerlink" title="3.3 事件注册方式"></a>3.3 事件注册方式</h3><p>标签绑定事件，完成监听的效果</p>
+<pre><code>&lt;body&gt;
+&lt;input type=&quot;button&quot; value=&quot;我是普通函数&quot; onclick=&quot;sing()&quot;&gt; &lt;br&gt;
+&lt;input type=&quot;button&quot; value=&quot;我是匿名函数&quot; id=&quot;myBtn&quot;&gt;
+&lt;/body&gt;
+&lt;script&gt;
+    /*
+    *   事件绑定方式有二种：
+    *       普通函数（耦合性太高）
+    *       匿名函数（解耦）  ---- 有2天来学习 jquery（jdbc-jdbTemplate）
+    *       
+    *       用单击事件举例 onClick
+    * 
+    * */
+    function sing() {
+        window.alert(&#39;单身情歌&#39;);
+    }
+
+    // 获取按钮对象
+    document.getElementById(&quot;myBtn&quot;).onclick = function () {
+        window.alert(&#39;海草舞&#39;);
+    }
+&lt;/script&gt;
+</code></pre><h2 id="四-JavaScript内置对象"><a href="#四-JavaScript内置对象" class="headerlink" title="四 JavaScript内置对象"></a>四 JavaScript内置对象</h2><h3 id="4-1-数组对象"><a href="#4-1-数组对象" class="headerlink" title="4.1 数组对象"></a>4.1 数组对象</h3><pre><code>&lt;script&gt;
+    /*
+    * 数组对象
+    *   1） var arr = [元素1，元素2，元素3....];（掌握）
+    *   2） var arr = new Array();
+    *   3） var arr = new Array(长度);
+    *   4） var arr = new Array(元素1，元素2，元素3....);
+    *
+    *
+    *
+    *   注意：在js中，数组的元素类型和长度任意,很像java中的集合
+    *
+    * */
+
+    var arr = [&#39;鹏哥&#39;, &quot;牛哥&quot;, &quot;婷哥&quot;, &quot;擎哥&quot;];
+    console.log(arr);
+
+    var arr2 = new Array();
+    arr2[0] = &quot;苍老师&quot;;
+    arr2[1] = &quot;波多老师&quot;;
+    arr2[2] = &quot;小泽老师&quot;;
+    console.log(arr2);
+
+    var arr3 = new Array(2);
+    arr3[0] = &quot;花泽老师&quot;;
+    arr3[1] = &quot;大桥老师&quot;;
+    arr3[2] = 1234;
+    arr3[3] = new Date();
+    arr3[4] = true;
+    console.log(arr3);
+
+    var arr4 = new Array(1234, true, &#39;张三&#39;);
+    console.log(arr4);
+    /*
+    *   数组常见方法
+    *       1）concat() 连接数组
+    *       2）join(&#39;拼接规则&#39;) 与split功能相反，将数组元素拼接成一个字符串
+    *       3）reverse() 数组元素反转
+    *       4）sort() 排序
+    *           字符串 按照字母顺序
+    *           数值
+    *               sort(function(a,b){
+    *                   return a-b; 升序
+    *                   reutnr b-a; 降序
+    *               });
+    *
+    *
+    * */
+
+    console.log(arr.concat(arr2));
+    console.log(arr2.join(&quot;+&quot;));
+    console.log(arr3.reverse());
+
+    var arr5 = [&quot;c&quot;, &quot;b&quot;, &quot;a&quot;];
+    console.log(arr5.sort());
+    var arr6 = [11, 9, 1, 8, 5];
+    console.log(arr6.sort(function (a, b) {
+        return a - b;
+    }));
+&lt;/script&gt;
+</code></pre><h3 id="4-2-日期对象"><a href="#4-2-日期对象" class="headerlink" title="4.2 日期对象"></a>4.2 日期对象</h3><pre><code>&lt;script&gt;
+    // 日期对象
+    var date = new Date();
+    console.log(date);
+    console.log(date.toLocaleString()); // 根据系统的本地时间来显示
+    console.log(date.getFullYear());// yyyy
+    console.log(date.getMonth());//MM
+    console.log(date.getDate());// dd
+    console.log(date.getDay());// 星期
+    console.log(date.getTime());// 获取 1970至今的毫秒值
+
+&lt;/script&gt;
+</code></pre><h3 id="4-3-全局对象"><a href="#4-3-全局对象" class="headerlink" title="4.3 全局对象"></a>4.3 全局对象</h3><p>不需要创建直接使用</p>
+<pre><code>&lt;script&gt;
+    // 字符串转换数值
+    /*
+    *   parseInt(); 字符串转换成整型
+    *   parseFloat(); 字符串转换成浮点型
+    *       特点：从字符串第一个字符开始转换，当遇到非数值字符串停止转换
+    *       应用场景：
+    *               图片修改大小 100px 200px
+    *               获取鼠标左表(x,y) onmousemove
+    *
+    *       NaN  not a number  这不是一个数
+    *
+    *       isNaN(); 判断这个字符串不是数值 返回true
+    *
+    * */
+
+    var a = &quot;a1a23.a3a21&quot;;
+    var b = &quot;123&quot;;
+    console.log(parseInt(a));
+
+    console.log(parseFloat(a));
+
+    console.log(isNaN(a));
+    console.log(isNaN(b));
+
+
+    // 编码和解码
+    /*
+    *   浏览器发送数据到服务器   中文---编码
+    *       encodeURI();
+    *   服务器返回数据到浏览器 中文--解码
+    *       decodeURI();
+    * */
+
+    var str = &quot;鹏哥年轻有为，活力棒棒哒.....&quot;;
+    // 编码
+    var encodeURI = encodeURI(str);
+    console.log(encodeURI);
+    // 解码
+    console.log(decodeURI(encodeURI));
+
+&lt;/script&gt;
+</code></pre><h1 id="JavaScript二维数组"><a href="#JavaScript二维数组" class="headerlink" title="JavaScript二维数组"></a>JavaScript二维数组</h1><p>其实，我们都见过这样的二维数组，只不过平时没在意罢了，例如：</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">//这就是一个二位数组。角标从0开始，这样看起来比较繁琐</span>
+<span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">11</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">12</span><span class="token punctuation">,</span><span class="token number">13</span><span class="token punctuation">,</span><span class="token number">15</span><span class="token punctuation">]</span><span class="token punctuation">]</span> 
+<span class="token comment" spellcheck="true">//一般我们会这样定义二维数组</span>
+<span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+arr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+arr<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">11</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+arr<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">12</span><span class="token punctuation">,</span><span class="token number">13</span><span class="token punctuation">,</span><span class="token number">15</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>例题：</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 输出结果为['a','b']</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//输出结果为a，第2列第1行所在的元素</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">,</span><span class="token string">"b"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 输出结果为['a','b']</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//输出结果为a，第2列第1行所在的元素</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://www.luv19.com" rel="external nofollow noreferrer">仙水忍</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://www.luv19.com/2019/02/27/2019-02-27-html-xue-xi-03-js-ji-chu/">http://www.luv19.com/2019/02/27/2019-02-27-html-xue-xi-03-js-ji-chu/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="http://www.luv19.com" target="_blank">仙水忍</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/JS语法/">
+                                    <span class="chip bg-color">JS语法</span>
+                                </a>
+                            
+                                <a href="/tags/JS事件/">
+                                    <span class="chip bg-color">JS事件</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2019/03/05/2019-03-05-html-xue-xi-04-js-gao-ji/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/65.jpg" class="responsive-img" alt="html学习04_js高级">
+                        
+                        <span class="card-title">html学习04_js高级</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            DOM对象，正则表达式应用场景。
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-03-05
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/HTML/" class="post-category">
+                                    HTML
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/DOM对象/">
+                        <span class="chip bg-color">DOM对象</span>
+                    </a>
+                    
+                    <a href="/tags/正则表达式/">
+                        <span class="chip bg-color">正则表达式</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/02/25/2019-02-25-html-xue-xi-02-biao-dan-yu-css-yang-shi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/178.jpg" class="responsive-img" alt="html学习02_表单和CSS样式">
+                        
+                        <span class="card-title">html学习02_表单和CSS样式</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            HTML表单，CSS样式，怪异盒子。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-02-25
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/HTML/" class="post-category">
+                                    HTML
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/HTML表单/">
+                        <span class="chip bg-color">HTML表单</span>
+                    </a>
+                    
+                    <a href="/tags/CSS样式/">
+                        <span class="chip bg-color">CSS样式</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 仙水忍<br />'
+            + '文章作者: 仙水忍<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+    
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+
+<!-- 代码块折行 -->
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+		    Copyright&nbsp;&copy;
+            <span id="year">年份</span>
+            <a href="http://www.luv19.com" target="_blank">仙水忍</a>
+&nbsp;
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    window.setTimeout("siteTime()", 1000);
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2019";
+                    var startMonth = "2";
+                    var startDate = "19";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "已运行 " + diffDays + " 天 " + diffHours +
+                            " 时 " + diffMinutes + " 分 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "已运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 时 " + diffMinutes + " 分 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+	    
+
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点字数:&nbsp;<span
+                class="white-color">67.7k</span>&nbsp;字
+            
+			
+			<br>
+            
+			
+            
+            
+            
+			
+            
+            <span id="icp"><img src="/medias/icp.png" theme.icp.title style="vertical-align: text-bottom;" />
+                <a href="http://www.beian.miit.gov.cn/" target="_blank">鲁ICP备20002018号-1</a>
+            </span>
+            
+			&nbsp;
+            
+            <span id="busuanzi_container_site_pv">
+                &nbsp;<i class="far fa-eye"></i>&nbsp;访问总量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+			
+			
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+
+
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://www.github.com/fishyo9" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:fishyo9@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="https://www.facebook.com/llfishyo" class="tooltipped" target="_blank" data-tooltip="关注我的Facebook: https://www.facebook.com/llfishyo" data-position="top" data-delay="50">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+
+
+
+    <a href="https://twitter.com/fishyo9" class="tooltipped" target="_blank" data-tooltip="关注我的Twitter: https://twitter.com/fishyo9" data-position="top" data-delay="50">
+        <i class="fab fa-twitter"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=188197110" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 188197110" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
+    
+
+    
+
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+	
+<!-- 动态标题 -->
+    <script type="text/javascript"> var OriginTitile = document.title,
+    st; document.addEventListener("visibilitychange", 
+    function () { document.hidden ? (document.title = "せんすいしのぶ",
+    clearTimeout(st)) : (document.title = "せんすいしのぶ", st = setTimeout(function () 
+    { document.title = OriginTitile }, 3e3)) }) 
+    </script>
+
+<!-- 雪花特效 -->
+    
+
+<!-- 网站预加载js脚本 -->
+   <script src="../source/js/instant.page.js" type="module"></script>
+
+</body>
+</html>

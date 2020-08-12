@@ -1,0 +1,2366 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="http中jsp&amp;el&amp;jstl, 仙水忍 仙水忍博客 仙水博客 自律的鱼">
+    <meta name="description" content="jsp&amp;amp;el&amp;amp;jstl第1章 jsp入门1.1 jsp简介1.1.1 jsp的概念​    HTML代码与Java代码共同存在，其中，HTML代码用来实现网页中静态内容的显示，Java代码用来实现网页中动态内容的显示。为了与">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="baidu-site-verification" content="XByRFWJPnr">
+	
+    <title>http中jsp&amp;el&amp;jstl | 仙水忍</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+    <style type="text/css">
+        
+    </style>
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?46e79e71af0709a5b9106bf20cecc493";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper head-container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">仙水忍</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于我</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list" style="zoom: 0.6;"></i>
+      
+      <span>媒体</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/medias/musics">
+          
+          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>音乐</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/medias/videos">
+          
+          <i class="fas fa-film" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>视频</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/medias/books">
+          
+          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>阅读</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/medias/galleries">
+          
+          <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>图片</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list" style="zoom: 0.6;"></i>
+      
+      <span>其他</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/others/download">
+          
+          <i class="fas fa-download" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>下载</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">仙水忍</div>
+        <div class="logo-desc">
+            
+            仙水忍_仙水忍博客是一个专注于计算机技术及其他资源分享的个人博客，站内相关资源均由本人整理自网络，欢迎学习交流及分享各种资源。
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list"></i>
+			
+			媒体
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>   
+				
+                  <a href="/medias/musics " style="margin-left:50px";>
+				  
+				   <i class="fa fas fa-music" style="position: absolute;left:28px" ></i>
+			      
+		          <span>音乐</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/medias/videos " style="margin-left:50px";>
+				  
+				   <i class="fa fas fa-film" style="position: absolute;left:28px" ></i>
+			      
+		          <span>视频</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/medias/books " style="margin-left:50px";>
+				  
+				   <i class="fa fas fa-book" style="position: absolute;left:28px" ></i>
+			      
+		          <span>阅读</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/medias/galleries " style="margin-left:50px";>
+				  
+				   <i class="fa fas fa-image" style="position: absolute;left:28px" ></i>
+			      
+		          <span>图片</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list"></i>
+			
+			其他
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>   
+				
+                  <a href="/others/download " style="margin-left:50px";>
+				  
+				   <i class="fa fas fa-download" style="position: absolute;left:28px" ></i>
+			      
+		          <span>下载</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/fishyo9" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/fishyo9" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/143.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        http中jsp&amp;el&amp;jstl
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/JSP/">
+                                <span class="chip bg-color">JSP</span>
+                            </a>
+                        
+                            <a href="/tags/EL/">
+                                <span class="chip bg-color">EL</span>
+                            </a>
+                        
+                            <a href="/tags/JSTL/">
+                                <span class="chip bg-color">JSTL</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/HTTP/" class="post-category">
+                                HTTP
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-03-27
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    6k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    24 分
+                </div>
+                
+				
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+            
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="jsp-amp-el-amp-jstl"><a href="#jsp-amp-el-amp-jstl" class="headerlink" title="jsp&amp;el&amp;jstl"></a>jsp&amp;el&amp;jstl</h1><h1 id="第1章-jsp入门"><a href="#第1章-jsp入门" class="headerlink" title="第1章 jsp入门"></a>第1章 jsp入门</h1><h2 id="1-1-jsp简介"><a href="#1-1-jsp简介" class="headerlink" title="1.1 jsp简介"></a>1.1 jsp简介</h2><h3 id="1-1-1-jsp的概念"><a href="#1-1-1-jsp的概念" class="headerlink" title="1.1.1 jsp的概念"></a>1.1.1 jsp的概念</h3><p>​    HTML代码与Java代码共同存在，其中，HTML代码用来实现网页中静态内容的显示，Java代码用来实现网页中动态内容的显示。为了与传统HTML有所区别，JSP文件的扩展名为.jsp。</p>
+<p>​    JSP技术所开发的Web应用程序是基于Java的，本质上就是一个Servlet , 它可以用一种简捷而快速的方法从Java程序生成Web页面，其使用上具有如下几点特征：</p>
+<ul>
+<li><strong>跨平台：</strong>由于JSP是基于Java语言的，它可以使用Java API，所以它也是跨平台的，可以应用于不同的系统中，如Windows、Linux等。当从一个平台移植到另一个平台时，JSP和JavaBean的代码并不需要重新编译，这是因为Java的字节码是与平台无关的，这也应验了Java语言“一次编译，到处运行”的特点</li>
+<li><strong>业务代码相分离：</strong>在使用JSP技术开发Web应用时，可以将界面的开发与应用程序的开发分离开。开发人员使用HTML来设计界面，使用JSP标签和脚本来动态生成页面上的内容。在服务器端，JSP引擎（或容器，本书中指Tomcat）负责解析JSP标签和脚本程序，生成所请求的内容，并将执行结果以HTML页面的形式返回到浏览器。</li>
+<li><strong>组件重用：</strong>JSP中可以使用JavaBean编写业务组件，也就是使用一个JavaBean类封装业务处理代码或者作为一个数据存储模型，在JSP页面中，甚至在整个项目中，都可以重复使用这个JavaBean，同时，JavaBean也可以应用到其他Java应用程序中。</li>
+<li><strong>预编译：</strong>预编译就是在用户第一次通过浏览器访问JSP页面时，服务器将对JSP页面代码进行编译，并且仅执行一次编译。编译好的代码将被保存，在用户下一次访问时，会直接执行编译好的代码。这样不仅节约了服务器的CPU资源，还大大的提升了客户端的访问速度。</li>
+</ul>
+<h3 id="1-1-2-为什么要诞生JSP"><a href="#1-1-2-为什么要诞生JSP" class="headerlink" title="1.1.2 为什么要诞生JSP"></a>1.1.2 为什么要诞生JSP</h3><p>​    我们先来设计一个场景，完成一个需求：往页面输出一个表格.</p>
+<p>​    要实现此需求,我们就需要在servlet中使用response对象，向页面输出内容，需要拼接html标签，这个操作十分麻烦。</p>
+<p>​    因此我们需要一个解决方案，那么这个解决方案应该满足什么条件呢？</p>
+<p>​        <strong>应该有以下两点：</strong></p>
+<p>​            <strong>1 必须不再拼接html，使用字符串向页面输出代码</strong></p>
+<p>​            <strong>2 需要保留servlet可以通过代码，动态生成网页的功能</strong></p>
+<p>​    <strong>满足这两点的正式我们要学习的JSP技术：它可以简化html书写，同时动态生成页面。</strong></p>
+<h3 id="1-1-3-jsp初体验"><a href="#1-1-3-jsp初体验" class="headerlink" title="1.1.3 jsp初体验"></a>1.1.3 jsp初体验</h3><h4 id="1-1-3-1-创建jsp文件"><a href="#1-1-3-1-创建jsp文件" class="headerlink" title="1.1.3.1 创建jsp文件"></a>1.1.3.1 创建jsp文件</h4><p><img src="C:/Users/Administrator/Desktop/HTML/day31_jsp_el_jstl/day31_jsp_el_jstl/01_%E8%AE%B2%E4%B9%89/01_%E5%8F%82%E8%80%83%E8%AE%B2%E4%B9%89/img/005.png" alt></p>
+<h4 id="1-1-3-2-编写jsp代码"><a href="#1-1-3-2-编写jsp代码" class="headerlink" title="1.1.3.2 编写jsp代码"></a>1.1.3.2 编写jsp代码</h4><pre class="line-numbers language-jsp"><code class="language-jsp"><html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <title>测试jsp</title>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<body>
+   <% date date(); simpledateformat dateformat="new" simpledateformat("yyyy-mm-dd hh:mm:dd"); string curtime="dateFormat.format(date);" request.setattribute("curtime",curtime); %>
+
+    当前系统时间：<span style="color: red"><%=request.getattribute("curtime") %></%=request.getattribute("curtime")></span>
+</%></body>
+</html><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="1-1-3-3-访问jsp"><a href="#1-1-3-3-访问jsp" class="headerlink" title="1.1.3.3 访问jsp"></a>1.1.3.3 访问jsp</h4><p>在地址栏输入jsp文件名称访问即可。</p>
+<p>效果：</p>
+<p><img src="C:/Users/Administrator/Desktop/HTML/day31_jsp_el_jstl/day31_jsp_el_jstl/01_%E8%AE%B2%E4%B9%89/01_%E5%8F%82%E8%80%83%E8%AE%B2%E4%B9%89/img/temp6.png" alt></p>
+<h2 id="1-2-jsp的执行流程"><a href="#1-2-jsp的执行流程" class="headerlink" title="1.2 jsp的执行流程"></a>1.2 jsp的执行流程</h2><p>​    通过上面的jsp初体验, 我们看到jsp中既可以编写java代码也可以直接编写html代码，相对servlet更加方便，为啥jsp中可以直接使用request对象呢 ? 接下来我们来看下它的执行流程</p>
+<p><img src="006.png" alt></p>
+<p>依据上图的流程，在本地找到了生成的java文件，其中一部分内容如下图：</p>
+<p><img src="017.png" alt></p>
+<p>​    我们可以看到当前的jsp文件被翻译成了一个类，这个类继承HttpJspBase类，那么这个HttpJspBase类又是什么？</p>
+<p>​    注意jsp的翻译有服务器完成，HttpJspBase类一定也是tomcat服务器的内容，顺着org.apache.jasper.runtime.HttpJspBase这个类全名，我们找到这个类的源码：</p>
+<p><img src="018.png" alt></p>
+<p>​    通过观察源码，<strong>我们发现JSP其实底层就是一个servlet</strong>。通过观察源码，我们发现我们刚刚编写的所有代码都在该Servlet里面的service方法内部。</p>
+<p><img src="temp7.png" alt></p>
+<p><strong>总结：</strong></p>
+<p>​    <strong>1.</strong> jsp之所以可以编写html代码，其实本质上也是类似我们使用Servlet直接输出的。</p>
+<p>​    <strong>2.</strong> jsp之所以能够直接使用request对象，是因为我们自己编写的代码全部都落入到了service方法内部，在service方法内部一开始就已经声明了request,response,session,application(ServletContext)等对象了,这些对象成为之jsp内置对象。</p>
+<h2 id="1-3-jsp的基本语法"><a href="#1-3-jsp的基本语法" class="headerlink" title="1.3 jsp的基本语法"></a>1.3 jsp的基本语法</h2><h3 id="1-3-1-jsp注释"><a href="#1-3-1-jsp注释" class="headerlink" title="1.3.1 jsp注释"></a>1.3.1 jsp注释</h3><h4 id="1-3-1-1-JSP注释格式"><a href="#1-3-1-1-JSP注释格式" class="headerlink" title="1.3.1.1 JSP注释格式"></a>1.3.1.1 JSP注释格式</h4><p>​        &lt;%– jsp注释  –%&gt;</p>
+<h4 id="1-3-1-2-JSP注释的使用"><a href="#1-3-1-2-JSP注释的使用" class="headerlink" title="1.3.1.2 JSP注释的使用"></a>1.3.1.2 JSP注释的使用</h4><p><strong>jsp文件</strong>：</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">%</span>@ page contentType<span class="token operator">=</span><span class="token string">"text/html;charset=UTF-8"</span> language<span class="token operator">=</span><span class="token string">"java"</span> <span class="token operator">%</span><span class="token operator">></span>
+<span class="token operator">&lt;</span>html<span class="token operator">></span>
+  <span class="token operator">&lt;</span>head<span class="token operator">></span>
+    <span class="token operator">&lt;</span>title<span class="token operator">></span>注释<span class="token operator">&lt;</span><span class="token operator">/</span>title<span class="token operator">></span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">></span>
+  <span class="token operator">&lt;</span>body<span class="token operator">></span>
+      <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span><span class="token operator">-</span>这个是html注释<span class="token operator">--</span><span class="token operator">></span>
+      <span class="token operator">&lt;</span><span class="token operator">%</span><span class="token operator">--</span> 这个是jsp的注释<span class="token operator">--</span><span class="token operator">%</span><span class="token operator">></span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>访问页面测试：没有任何内容显示，那么也就说html与jsp注释都生效, 但是点击查看源码的时候我们发现我们只能查看到html的注释，jsp的注释根本就看不到。 </p>
+<p><img src="temp5.png" alt></p>
+<p><strong>总结</strong></p>
+<p>​    jsp的注释不会显示在源码上，更加安全 , 所以在jsp页面中推荐使用jsp的注释。</p>
+<h3 id="1-3-2-jsp书写java代码的三种方式"><a href="#1-3-2-jsp书写java代码的三种方式" class="headerlink" title="1.3.2 jsp书写java代码的三种方式"></a>1.3.2 jsp书写java代码的三种方式</h3><p>​    在之前的演示中，我的jsp已经可以向页面输出一个html内容，但是这个还不够，jsp应该还要有像servlet一样可以通过代码，动态生成网页的功能。servlet是使用java代码生成动态网页的，因此，接下来，我们要学习如何在jsp页面使用java代码。</p>
+<h4 id="1-3-2-1-脚本片段"><a href="#1-3-2-1-脚本片段" class="headerlink" title="1.3.2.1 脚本片段"></a>1.3.2.1 脚本片段</h4><h5 id="1-3-2-1-1-脚本片段格式"><a href="#1-3-2-1-1-脚本片段格式" class="headerlink" title="1.3.2.1.1  脚本片段格式"></a>1.3.2.1.1  脚本片段格式</h5><p>​    格式：&lt;%  Java代码片段  %&gt;</p>
+<p>​    jsp文件内容：</p>
+<pre class="line-numbers language-jsp"><code class="language-jsp"><%@ page contenttype="text/html;charset=UTF-8" language="java" %>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <title>书写java代码的三种方式</title>
+</head>
+<body>
+    <%-- 脚本片段 --%>
+    <% int x="10;" %>
+</%></%--></body>
+</html><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></%@></code></pre>
+<p>​    翻译成java文件：    <img src="011.png" alt></p>
+<h5 id="1-3-2-1-2-脚本片段作用"><a href="#1-3-2-1-2-脚本片段作用" class="headerlink" title="1.3.2.1.2 脚本片段作用"></a>1.3.2.1.2 脚本片段作用</h5><pre><code>    在jsp翻译后的_jspService方法中，嵌入java代码</code></pre><h5 id="1-3-2-1-3-脚本片段使用注意事项"><a href="#1-3-2-1-3-脚本片段使用注意事项" class="headerlink" title="1.3.2.1.3 脚本片段使用注意事项"></a>1.3.2.1.3 脚本片段使用注意事项</h5><p>​    脚本片段可以分开书写，最终是组合在一起的，示例：</p>
+<p>​    脚本片段内容：</p>
+<pre class="line-numbers language-jsp"><code class="language-jsp">  <% 5 for(int j="0" ; < ;j++){%>
+        Hello World!!!<br>
+  <%}%>< code></%}%><><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></%></code></pre>
+<p>​    效果：</p>
+<pre class="line-numbers language-java"><code class="language-java">Hello World<span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span>
+Hello World<span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span>
+Hello World<span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span>
+Hello World<span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span>
+Hello World<span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>​    java源码:</p>
+<p><img src="019.png" alt></p>
+<h4 id="1-3-2-2-脚本声明"><a href="#1-3-2-2-脚本声明" class="headerlink" title="1.3.2.2 脚本声明"></a>1.3.2.2 脚本声明</h4><h5 id="1-3-2-2-1-脚本声明格式"><a href="#1-3-2-2-1-脚本声明格式" class="headerlink" title="1.3.2.2.1 脚本声明格式"></a>1.3.2.2.1 脚本声明格式</h5><p>​    格式：&lt;%!  书写Java代码  %&gt;</p>
+<p>​    jsp文件内容：</p>
+<pre class="line-numbers language-jsp"><code class="language-jsp"><%@ page contenttype="text/html;charset=UTF-8" language="java" %>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <title>书写java代码的三种方式</title>
+</head>
+<body>
+    <%! int i="0" ;%>
+</%!></body>
+</html>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></%@></code></pre>
+<p>​    翻译成java文件：    <img src="008.png" alt></p>
+<pre><code>总结：脚本声明书写的java代码会翻译在类的成员位置上。</code></pre><h5 id="1-3-2-2-2-脚本声明作用"><a href="#1-3-2-2-2-脚本声明作用" class="headerlink" title="1.3.2.2.2 脚本声明作用"></a>1.3.2.2.2 脚本声明作用</h5><pre><code>在类的成员位置上声明方法和变量
+</code></pre><h4 id="1-3-2-3-脚本表达式"><a href="#1-3-2-3-脚本表达式" class="headerlink" title="1.3.2.3 脚本表达式"></a>1.3.2.3 脚本表达式</h4><h5 id="1-3-2-3-1-脚本表达式格式"><a href="#1-3-2-3-1-脚本表达式格式" class="headerlink" title="1.3.2.3.1 脚本表达式格式"></a>1.3.2.3.1 脚本表达式格式</h5><p>​    格式：&lt;%= 表达式 %&gt;</p>
+<p>​    jsp文件内容：</p>
+<pre class="line-numbers language-jsp"><code class="language-jsp"><%@ page contenttype="text/html;charset=UTF-8" language="java" %>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <title>书写java代码的三种方式</title>
+</head>
+<body>
+
+    <%-- 脚本表达式 --%>
+    <%= "传智播客" %>
+</%=></%--></body>
+</html>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></%@></code></pre>
+<p>​    翻译成java文件：在_jspService方法中，找到了我们书写的内容</p>
+<p><img src="009.png" alt></p>
+<p>​    上图的中的out对象是什么？</p>
+<p>​    答：out对象的类型是JspWriter，通过查阅JAVAEE文档发现其父类是java.io.Writer，是一个Writer 字符流。</p>
+<p>​    页面输出：</p>
+<p>​    <img src="010.png" alt></p>
+<pre><code>    总结：脚本表达式书写的java代码，会翻译到java文件中的_jspService方法内，被out.print输出到页面。</code></pre><h5 id="1-3-2-3-2-脚本表达式作用"><a href="#1-3-2-3-2-脚本表达式作用" class="headerlink" title="1.3.2.3.2 脚本表达式作用"></a>1.3.2.3.2 脚本表达式作用</h5><pre><code>    代替response向页面输出内容</code></pre><h1 id="第2章-EL表达式"><a href="#第2章-EL表达式" class="headerlink" title="第2章 EL表达式"></a>第2章 EL表达式</h1><h2 id="2-1-EL表达式的基本概述"><a href="#2-1-EL表达式的基本概述" class="headerlink" title="2.1 EL表达式的基本概述"></a>2.1 EL表达式的基本概述</h2><p>​    想要知道什么是EL表达式，它为了解决什么问题而诞生，我们先通过一个场景来了解一下：</p>
+<p>​    现在有一个需求：在jsp使用java代码在request中设置四个数据（10 20 30 40 ）的向页面输出（10+20+（30-40））计算结果，以我们现在的技术去实现会是这样实现：</p>
+<pre class="line-numbers language-jsp"><code class="language-jsp"><%@ page contenttype="text/html;charset=UTF-8" language="java" %>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <title>Title</title>
+</head>
+<body>
+<%-- 20 30 40 在jsp设置(request)四个数据（10 ）的向页面输出（10+20+（30-40））计算结果 --%>
+<% request.setattribute("num1", 10); request.setattribute("num2", 20); request.setattribute("num3", 30); request.setattribute("num4", 40); %>
+java代码输出：<%= (integer)request.getattribute("num1") + (integer)request.getattribute("num2") ( (integer)request.getattribute("num3") - (integer)request.getattribute("num4"))%>
+</%=></%></%--></body>
+</html>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></%@></code></pre>
+<p>​    从上面的代码中我们发现，使用之前的脚本片段来完成实在太过复杂和繁琐，一个简单的算术计算不应该如此艰难的完成。</p>
+<p>​    因此我们需要一个新的技术，来简化java代码的一些操作，这个就是我们需要学习的EL表达式技术。</p>
+<p>​    <strong>EL全称：Expression Language</strong></p>
+<p>​    <strong>作用：代替jsp中脚本表达式的功能，简化对java代码的操作。</strong></p>
+<h2 id="2-2-EL表达式的格式和作用"><a href="#2-2-EL表达式的格式和作用" class="headerlink" title="2.2 EL表达式的格式和作用"></a>2.2 EL表达式的格式和作用</h2><ol>
+<li><strong>EL表达式的格式</strong>：${表达式内容}</li>
+<li><strong>EL表达式的作用</strong>： 主要是从域对象中查找指定的数据。</li>
+</ol>
+<h2 id="2-3-EL表达式的基本使用"><a href="#2-3-EL表达式的基本使用" class="headerlink" title="2.3 EL表达式的基本使用"></a>2.3 EL表达式的基本使用</h2><h3 id="2-3-1-EL获得容器（域对象）的数据"><a href="#2-3-1-EL获得容器（域对象）的数据" class="headerlink" title="2.3.1 EL获得容器（域对象）的数据"></a>2.3.1 EL获得容器（域对象）的数据</h3><p>​    再上面的案例中，我们使用原来的方式获取数据十分麻烦，接下来我们使用EL表达式的方式完成上面的需求：</p>
+<p>jsp演示代码：</p>
+<pre class="line-numbers language-jsp"><code class="language-jsp"><%@ page contenttype="text/html;charset=UTF-8" language="java" %>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <title>Title</title>
+</head>
+<body>
+<%-- 20 30 40 在jsp设置(request)四个数据（10 ）的向页面输出（10+20+（30-40））计算结果 --%>
+<% request.setattribute("num1", 10); request.setattribute("num2", 20); request.setattribute("num3", 30); request.setattribute("num4", 40); %>
+使用EL表达式输出：${num1 + num2 + (num3 - num4)}
+
+</%></%--></body>
+</html>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></%@></code></pre>
+<p>​    显而易见的使用EL表达式我们获取数字，并执行运算都方便了许多。在上面这个案例中我们是从request中获取数据，那么我们可以获取其他域对象(容器)中的数据吗？我们来测试一下：</p>
+<pre class="line-numbers language-jsp"><code class="language-jsp"><%@ page contenttype="text/html;charset=UTF-8" language="java" %>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <title>Title</title>
+</head>
+<body>
+    <%-- 在三个域对象中存入同名的数据（request、session、servletcontext） 然后再使用el表达式获取。 --%>
+    <% request.setattribute("addr","上海"); request.getsession().setattribute("addr","北京"); session.setattribute("addr","北京"); request.getsession().getservletcontext().setattribute("addr","广州"); application.setattribute("addr","广州"); %>
+    ${addr}
+</%></%--></body>
+</html>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></%@></code></pre>
+<p>​    测试的结果出来后，我们会发现，获取出来的是——上海。设置三个容器的数据都是同名数据，这造成了我们获取数据的时候，单单使用名称已经无法区分所以数据，那么怎么解决这个问题呢？如何才能从指定的容器中获取数据呢？</p>
+<p>​    我们需要在获取数据的时候指定相关的容器：</p>
+<pre class="line-numbers language-jsp"><code class="language-jsp"><%@ page contenttype="text/html;charset=UTF-8" language="java" %>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <title>Title</title>
+</head>
+<body>
+<%-- 在三个容器中存入数据（request、session、servletcontext） 然后再使用el表达式获取。 --%>
+<% request.setattribute("addr","上海"); request.getsession().setattribute("addr","北京"); session.setattribute("addr","北京"); request.getsession().getservletcontext().setattribute("addr","广州"); application.setattribute("addr","广州"); %>
+指定从request容器获取数据：${requestScope.addr}<br>
+指定从session容器获取数据：${sessionScope.addr}<br>
+指定从servletcontext容器获取数据：${applicationScope.addr}<br>
+</%></%--></body>
+</html>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></%@></code></pre>
+<p>​    那么我们之前没有指定容器是如何获取数据的呢？其实${addr}在获取容器的时候，默认按request、session、servletcontext顺序从获取数据，只要获取到就不再往下找了，所以上一个案例一直获取到是上海。</p>
+<h3 id="2-3-2-EL获取和解析复杂数据"><a href="#2-3-2-EL获取和解析复杂数据" class="headerlink" title="2.3.2 EL获取和解析复杂数据"></a>2.3.2 EL获取和解析复杂数据</h3><p>​    上面的案例我们在获取数据的时候，都是简单的字符串，接下来我们来获取一些复杂数据，复杂数据特指：数组，集合（List   Map）和JavaBean。</p>
+<h4 id="2-3-2-1-获取数组"><a href="#2-3-2-1-获取数组" class="headerlink" title="2.3.2.1 获取数组"></a>2.3.2.1 获取数组</h4><p>servlet代码：</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> cn<span class="token punctuation">.</span>itcast<span class="token punctuation">.</span>web<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> cn<span class="token punctuation">.</span>itcast<span class="token punctuation">.</span>domain<span class="token punctuation">.</span>Person<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>ServletException<span class="token punctuation">;</span>
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>WebServlet<span class="token punctuation">;</span>
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>http<span class="token punctuation">.</span>HttpServlet<span class="token punctuation">;</span>
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>http<span class="token punctuation">.</span>HttpServletRequest<span class="token punctuation">;</span>
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>http<span class="token punctuation">.</span>HttpServletResponse<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>IOException<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//urlPatterns = "/el1"</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ELServlet1</span> <span class="token keyword">extends</span> <span class="token class-name">HttpServlet</span> <span class="token punctuation">{</span>
+    <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">doPost</span><span class="token punctuation">(</span>HttpServletRequest request<span class="token punctuation">,</span> HttpServletResponse response<span class="token punctuation">)</span> <span class="token keyword">throws</span> ServletException<span class="token punctuation">,</span> IOException <span class="token punctuation">{</span>
+        <span class="token function">doGet</span><span class="token punctuation">(</span>request<span class="token punctuation">,</span> response<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">doGet</span><span class="token punctuation">(</span>HttpServletRequest request<span class="token punctuation">,</span> HttpServletResponse response<span class="token punctuation">)</span> <span class="token keyword">throws</span> ServletException<span class="token punctuation">,</span> IOException <span class="token punctuation">{</span>
+
+        <span class="token comment" spellcheck="true">//准备需要解析的数据</span>
+        <span class="token comment" spellcheck="true">//数组</span>
+        <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">11</span><span class="token punctuation">,</span><span class="token number">22</span><span class="token punctuation">,</span><span class="token number">33</span><span class="token punctuation">,</span><span class="token number">44</span><span class="token punctuation">,</span><span class="token number">55</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+        request<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">"arr"</span><span class="token punctuation">,</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        request<span class="token punctuation">.</span><span class="token function">getRequestDispatcher</span><span class="token punctuation">(</span><span class="token string">"/4.jsp"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forward</span><span class="token punctuation">(</span>request<span class="token punctuation">,</span>response<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>jsp代码：</p>
+<pre class="line-numbers language-jsp"><code class="language-jsp"><%@ page contenttype="text/html;charset=UTF-8" language="java" %>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <title>Title</title>
+</head>
+<body>
+
+<%--获取数组数据--%>
+${arr[4]}<br>
+
+</%--获取数组数据--%></body>
+</html>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></%@></code></pre>
+<h4 id="2-3-2-2-获取数组注意事项"><a href="#2-3-2-2-获取数组注意事项" class="headerlink" title="2.3.2.2 获取数组注意事项"></a>2.3.2.2 获取数组注意事项</h4><p>​    <strong>获取数组中某一数据，使用中括号添加角标即可</strong></p>
+<h4 id="2-3-2-3-获取集合（list-map）"><a href="#2-3-2-3-获取集合（list-map）" class="headerlink" title="2.3.2.3 获取集合（list map）"></a>2.3.2.3 获取集合（list map）</h4><p>servlet准备数据：</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> cn<span class="token punctuation">.</span>itcast<span class="token punctuation">.</span>web<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> cn<span class="token punctuation">.</span>itcast<span class="token punctuation">.</span>domain<span class="token punctuation">.</span>Person<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>ServletException<span class="token punctuation">;</span>
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>WebServlet<span class="token punctuation">;</span>
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>http<span class="token punctuation">.</span>HttpServlet<span class="token punctuation">;</span>
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>http<span class="token punctuation">.</span>HttpServletRequest<span class="token punctuation">;</span>
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>http<span class="token punctuation">.</span>HttpServletResponse<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>IOException<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>ArrayList<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>HashMap<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>List<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Map<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//urlPatterns = "/el2"</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ELServlet2</span> <span class="token keyword">extends</span> <span class="token class-name">HttpServlet</span> <span class="token punctuation">{</span>
+    <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">doPost</span><span class="token punctuation">(</span>HttpServletRequest request<span class="token punctuation">,</span> HttpServletResponse response<span class="token punctuation">)</span> <span class="token keyword">throws</span> ServletException<span class="token punctuation">,</span> IOException <span class="token punctuation">{</span>
+        <span class="token function">doGet</span><span class="token punctuation">(</span>request<span class="token punctuation">,</span> response<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">doGet</span><span class="token punctuation">(</span>HttpServletRequest request<span class="token punctuation">,</span> HttpServletResponse response<span class="token punctuation">)</span> <span class="token keyword">throws</span> ServletException<span class="token punctuation">,</span> IOException <span class="token punctuation">{</span>
+
+        <span class="token comment" spellcheck="true">//准备需要解析的数据</span>
+
+        <span class="token comment" spellcheck="true">//list集合</span>
+        List list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"北京传智播客"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"上海传智播客"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"广州传智播客"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        request<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">"list"</span><span class="token punctuation">,</span>list<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//map集合</span>
+        Map map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"language1"</span><span class="token punctuation">,</span> <span class="token string">"java"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"language2"</span><span class="token punctuation">,</span> <span class="token string">"go"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"language3"</span><span class="token punctuation">,</span> <span class="token string">"c#"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"aa.bb.cc"</span><span class="token punctuation">,</span> <span class="token string">"python"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        request<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">"map"</span><span class="token punctuation">,</span>map<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        request<span class="token punctuation">.</span><span class="token function">getRequestDispatcher</span><span class="token punctuation">(</span><span class="token string">"/5.jsp"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forward</span><span class="token punctuation">(</span>request<span class="token punctuation">,</span>response<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>jsp代码：</p>
+<pre class="line-numbers language-jsp"><code class="language-jsp"><%@ page contenttype="text/html;charset=UTF-8" language="java" %>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <title>Title</title>
+</head>
+<body>
+
+<%--获取list集合数据--%>
+获取list集合：${list}<br>
+获取list集合某一个数据：${list[0]}<br>
+获取map集合：${map}<br>
+获取map集合某一数据：${map.language1}<br>
+获取map集合特殊key数据：${map["aa.bb.cc"]}<br>
+
+</%--获取list集合数据--%></body>
+</html>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></%@></code></pre>
+<h4 id="2-3-2-4-获取集合注意事项"><a href="#2-3-2-4-获取集合注意事项" class="headerlink" title="2.3.2.4 获取集合注意事项"></a>2.3.2.4 获取集合注意事项</h4><ol>
+<li>设置map集合数据的key，尽量不要出现”.“</li>
+<li>凡是在EL表达式中使用”.“可以获取的数据，使用”[]”也可以获取</li>
+</ol>
+<h4 id="2-3-2-5-获取JavaBean数据"><a href="#2-3-2-5-获取JavaBean数据" class="headerlink" title="2.3.2.5 获取JavaBean数据"></a>2.3.2.5 获取JavaBean数据</h4><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> cn<span class="token punctuation">.</span>itcast<span class="token punctuation">.</span>web<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> cn<span class="token punctuation">.</span>itcast<span class="token punctuation">.</span>domain<span class="token punctuation">.</span>Person<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>ServletException<span class="token punctuation">;</span>
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>WebServlet<span class="token punctuation">;</span>
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>http<span class="token punctuation">.</span>HttpServlet<span class="token punctuation">;</span>
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>http<span class="token punctuation">.</span>HttpServletRequest<span class="token punctuation">;</span>
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>http<span class="token punctuation">.</span>HttpServletResponse<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>IOException<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>ArrayList<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>HashMap<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>List<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Map<span class="token punctuation">;</span>
+
+<span class="token annotation punctuation">@WebServlet</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"ELServlet"</span><span class="token punctuation">,</span>urlPatterns <span class="token operator">=</span> <span class="token string">"/el3"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ELServlet3</span> <span class="token keyword">extends</span> <span class="token class-name">HttpServlet</span> <span class="token punctuation">{</span>
+    <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">doPost</span><span class="token punctuation">(</span>HttpServletRequest request<span class="token punctuation">,</span> HttpServletResponse response<span class="token punctuation">)</span> <span class="token keyword">throws</span> ServletException<span class="token punctuation">,</span> IOException <span class="token punctuation">{</span>
+        <span class="token function">doGet</span><span class="token punctuation">(</span>request<span class="token punctuation">,</span> response<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">doGet</span><span class="token punctuation">(</span>HttpServletRequest request<span class="token punctuation">,</span> HttpServletResponse response<span class="token punctuation">)</span> <span class="token keyword">throws</span> ServletException<span class="token punctuation">,</span> IOException <span class="token punctuation">{</span>
+
+        <span class="token comment" spellcheck="true">//准备需要解析的数据</span>
+
+        <span class="token comment" spellcheck="true">//JavaBean</span>
+        Person p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        p<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span><span class="token string">"李四"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        p<span class="token punctuation">.</span><span class="token function">setAge</span><span class="token punctuation">(</span><span class="token number">18</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        request<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">"p"</span><span class="token punctuation">,</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        request<span class="token punctuation">.</span><span class="token function">getRequestDispatcher</span><span class="token punctuation">(</span><span class="token string">"/6.jsp"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forward</span><span class="token punctuation">(</span>request<span class="token punctuation">,</span>response<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>jsp:</p>
+<pre class="line-numbers language-jsp"><code class="language-jsp"><%@ page contenttype="text/html;charset=UTF-8" language="java" %>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <title>Title</title>
+</head>
+<body>
+
+获取JavaBean数据：${p}<br>
+获取JavaBean指定属性的数据：${p.name} ${p.age}<br>
+使用中括号，获取JavaBean指定属性的数据：${p["name"]} ${p["age"]}<br>
+</body>
+</html>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></%@></code></pre>
+<h4 id="2-3-2-6-获取JavaBean数据注意事项"><a href="#2-3-2-6-获取JavaBean数据注意事项" class="headerlink" title="2.3.2.6 获取JavaBean数据注意事项"></a>2.3.2.6 获取JavaBean数据注意事项</h4><ol>
+<li>JavaBean数据获取类似获取map集合的方式，可以使用”.“获取数据的地方，都可以使用”[]”获取数据。</li>
+<li>如果el表达式获取不到数据，页面没有显示内容，不是显示”null“</li>
+<li>el在获取JavaBean的数据时候，底层调用的是getXXX方法。</li>
+</ol>
+<h3 id="2-3-3-EL执行运算"><a href="#2-3-3-EL执行运算" class="headerlink" title="2.3.3 EL执行运算"></a>2.3.3 EL执行运算</h3><p>​    EL不仅可以用来获取数据，之前的案例我们还看到了可以执行运算，因此，接下来我们要学习EL执行运算相关的知识点，它包括了算术运算、逻辑运算、比较运算、empty运算符、三元运算</p>
+<h4 id="2-3-3-1-支持算术运算符："><a href="#2-3-3-1-支持算术运算符：" class="headerlink" title="2.3.3.1 支持算术运算符：+  -  *  /  %"></a>2.3.3.1 支持算术运算符：+  -  *  /  %</h4><p>jsp演示：</p>
+<pre class="line-numbers language-jsp"><code class="language-jsp"><%@ page contenttype="text/html;charset=UTF-8" language="java" %>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <title>Title</title>
+</head>
+<body>
+<% request.setattribute("x",3); request.setattribute("y",4); request.setattribute("z","5"); %>
+${x + y}<br>
+${x - y}<br>
+${x * y}<br>
+${x / y}<br>
+${x % y}<br>
+<%--注意事项: 1 2 在el中，只要是数字就能执行运算，el在执行计算的时候，默认，将所有数据转换成long类型 在el中，如果在一个算式中有数据不存在，那么这个数据不参与运算，不报错继续执行。 --%>
+${x+y+z}<br>
+${x+y+z+a}<br>
+</%--注意事项:></%></body>
+</html>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></%@></code></pre>
+<h4 id="2-3-3-2-算术运算注意事项"><a href="#2-3-3-2-算术运算注意事项" class="headerlink" title="2.3.3.2 算术运算注意事项"></a>2.3.3.2 算术运算注意事项</h4><ol>
+<li>在EL中，只要是数字就能执行运算，EL在执行计算的时候，默认，将所有数据转换成Long类型</li>
+<li>在EL中，如果在一个算式中有数据不存在，那么这个数据不参与运算，不报错继续执行。</li>
+</ol>
+<h4 id="2-3-3-3-逻辑运算符"><a href="#2-3-3-3-逻辑运算符" class="headerlink" title="2.3.3.3 逻辑运算符"></a>2.3.3.3 逻辑运算符</h4><p>下图展示了EL可以支持的逻辑运算，注意：英文和符号效果一致，推荐使用符号</p>
+<p><img src="01.png" alt></p>
+<pre class="line-numbers language-jsp"><code class="language-jsp"><%@ page contenttype="text/html;charset=UTF-8" language="java" %>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <title>Title</title>
+</head>
+<body>
+<% request.setattribute("flag", true); request.setattribute("info", false); %>
+${flag && info }
+${flag || info }
+${!info }
+</%></body>
+</html>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></%@></code></pre>
+<h4 id="2-3-3-4-逻辑运算符注意事项"><a href="#2-3-3-4-逻辑运算符注意事项" class="headerlink" title="2.3.3.4 逻辑运算符注意事项"></a>2.3.3.4 逻辑运算符注意事项</h4><p>​    注意：逻辑运算中的异或”^”EL不支持。</p>
+<h4 id="2-3-3-5-比较运算"><a href="#2-3-3-5-比较运算" class="headerlink" title="2.3.3.5 比较运算"></a>2.3.3.5 比较运算</h4><p>下图展示了EL支持的比较运算符，注意：英文和符号效果一致，推荐使用符号</p>
+<p><img src="02.png" alt></p>
+<p>jsp代码演示：</p>
+<pre class="line-numbers language-jsp"><code class="language-jsp"><%@ page contenttype="text/html;charset=UTF-8" language="java" %>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <title>Title</title>
+</head>
+<body>
+<% request.setattribute("x",3); request.setattribute("y",4); %>
+${x < y }
+${x <= y } ${x> y }
+${x >= y }
+${x == y }
+${x != y }
+</=></%></body>
+</html>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></%@></code></pre>
+<h4 id="2-3-3-6-比较运算注意事项"><a href="#2-3-3-6-比较运算注意事项" class="headerlink" title="2.3.3.6 比较运算注意事项"></a>2.3.3.6 比较运算注意事项</h4><p>​    注意：使用比较运算符要保证数据是存在的并且是可比较的。</p>
+<h4 id="2-3-3-7-empty运算符和三元运算符"><a href="#2-3-3-7-empty运算符和三元运算符" class="headerlink" title="2.3.3.7 empty运算符和三元运算符"></a>2.3.3.7 empty运算符和三元运算符</h4><p>​    empty运算符是用来判断当前获取的数据是否为空或者当前获取的集合是否没有任何数据，三元运算符和java的三元运算符功能一致。</p>
+<p>jsp：</p>
+<pre class="line-numbers language-jsp"><code class="language-jsp"><%--再当前jsp导入arraylist--%>
+<%@ page import="java.util.ArrayList" %>
+<%@ page contenttype="text/html;charset=UTF-8" language="java" %>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <title>Title</title>
+</head>
+<body>
+<% request.setattribute("str",null); request.setattribute("list",new arraylist<>());
+%>
+${empty str}<br>
+${empty list}<br>
+${str == null? "数据为空":str}<br>
+</%></body>
+</html>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></%@></%@></%--再当前jsp导入arraylist--%></code></pre>
+<h4 id="2-3-3-8-empty运算符注意事项"><a href="#2-3-3-8-empty运算符注意事项" class="headerlink" title="2.3.3.8 empty运算符注意事项"></a>2.3.3.8 empty运算符注意事项</h4><p>​    注意：以上的empty运算符案例中，empty运算符可以和逻辑运算符组合使用。</p>
+<p>​    例如：${not empty str}表示str不为空，返回true。</p>
+<h1 id="第3章-JSTL的核心标签库使用"><a href="#第3章-JSTL的核心标签库使用" class="headerlink" title="第3章 JSTL的核心标签库使用"></a>第3章 JSTL的核心标签库使用</h1><h2 id="3-1-jstl标签的基本概述"><a href="#3-1-jstl标签的基本概述" class="headerlink" title="3.1 jstl标签的基本概述"></a>3.1 jstl标签的基本概述</h2><h3 id="3-1-1-jstl的由来"><a href="#3-1-1-jstl的由来" class="headerlink" title="3.1.1 jstl的由来"></a>3.1.1 jstl的由来</h3><p>​    接下来我们要学习一个新的知识点，那么首先，我们要知道他的由来：</p>
+<p><img src="03.png" alt></p>
+<h3 id="3-1-2-jstl的概述"><a href="#3-1-2-jstl的概述" class="headerlink" title="3.1.2 jstl的概述"></a>3.1.2 jstl的概述</h3><p>​    从JSP 1.1规范开始JSP就支持使用自定义标签，使用自定义标签大大降低了JSP页面的复杂度，同时增强了代码的重用性，因此自定义标签在WEB应用中被广泛使用。许多WEB应用厂商都开发出了自己的一套标签库提供给用户使用，这导致出现了许多功能相同的标签，令网页制作者无所适从，不知道选择哪一家的好。为了解决这个问题，Apache Jakarta小组归纳汇总了那些网页设计人员经常遇到的问题，开发了一套用于解决这些常用问题的自定义标签库，这套标签库被SUN公司定义为标准标签库（The JavaServer Pages Standard Tag Library），简称JSTL。使用JSTL可以解决用户选用不同WEB厂商的自定义标签时的困惑，JSP规范同时也允许WEB容器厂商按JSTL标签库的标准提供自己的实现，以获取最佳性能。</p>
+<p><img src="04.png" alt></p>
+<p>JSTL标签库提供5大功能（了解）：</p>
+<ol>
+<li>core：jstl的核心标签库。（目前还在使用）</li>
+<li>fmt：格式化（国际化）的标签（使用较少，对页面显示数据，格式化，现在都交给前端去做）</li>
+<li>functions：jstl中提供对字符串操作的函数库(不再使用，建议在数据显示在页面之前，在后台程序中，先格式化好字符串，然后直接显示，不再页面做处理，如果有前端，交给前端处理（javascript  解析json格式数据）</li>
+<li>sql：jstl提供的在jsp页面上书写sql，操作数据库，目前已经不再（不允许）使用（jsp开发模式二，这个开发模式不允许，在页面操作数据库）</li>
+<li>xml：jstl操作xml文件的。目前已经不再使用（页面传递数据，页面解析数据，使用json格式字符串代替xml）</li>
+</ol>
+<p>因此我们需要知道的只有jstl的核心标签库。</p>
+<h3 id="3-1-2-jstl核心标签库列表"><a href="#3-1-2-jstl核心标签库列表" class="headerlink" title="3.1.2 jstl核心标签库列表"></a>3.1.2 jstl核心标签库列表</h3><table>
+<thead>
+<tr>
+<th>标签名称</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>\&lt;c:if&gt;</strong></td>
+<td><em><em>用户java代码if(){}语句功能 </em></em> 重点掌握</td>
+</tr>
+<tr>
+<td><strong>\&lt;c:forEach&gt;</strong></td>
+<td><strong>用户代替java代码for循环语句</strong> 重点掌握</td>
+</tr>
+<tr>
+<td>\&lt;c:choose&gt;</td>
+<td>用于指定多个条件选择的组合边界，它必须与&lt;c:when&gt;和&lt;c:otherwise&gt;标签一起使用</td>
+</tr>
+<tr>
+<td>\&lt;c:out&gt;</td>
+<td>通常用于输出一段文本内容到客户端浏览器</td>
+</tr>
+<tr>
+<td>\&lt;c:set&gt;</td>
+<td>用于设置各种Web域中的属性</td>
+</tr>
+<tr>
+<td>\&lt;c:remove&gt;</td>
+<td>用于删除各种Web域中的属性</td>
+</tr>
+<tr>
+<td>\&lt;c:catch&gt;</td>
+<td>用于捕获嵌套在标签体中的内容抛出的异常</td>
+</tr>
+<tr>
+<td>\&lt;c:forTokens&gt;</td>
+<td>用户迭代操作String字符</td>
+</tr>
+<tr>
+<td>\&lt;c:param&gt;</td>
+<td>给请求路径添加参数</td>
+</tr>
+<tr>
+<td>\&lt;c:url&gt;</td>
+<td>重写url，在请求路径添加sessionid</td>
+</tr>
+<tr>
+<td>\&lt;c:import&gt;</td>
+<td>用于在JSP页面中导入一个URL地址指向的资源内容</td>
+</tr>
+<tr>
+<td>\&lt;c:redirect&gt;</td>
+<td>用于将当前的访问请求转发或重定向到其他资源</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>注意 : jsp本质上也是servlet,以前也会在jsp中处理业务逻辑,现在jsp的主要作用就是数据的展示,所以我们需要掌握在页面上遍历和判断的操作.</p>
+</blockquote>
+<h2 id="3-2-jstl标签的安装"><a href="#3-2-jstl标签的安装" class="headerlink" title="3.2 jstl标签的安装"></a>3.2 jstl标签的安装</h2><p>​    我们知道了jstl可以帮助我们解决jsp页面出现java和提高java在页面的重用性问题，那么接下来，我们需要的是学习使用jstl。</p>
+<h3 id="3-2-1-导入jar包"><a href="#3-2-1-导入jar包" class="headerlink" title="3.2.1 导入jar包"></a>3.2.1 导入jar包</h3><pre class="line-numbers language-java"><code class="language-java">javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>jsp<span class="token punctuation">.</span>jstl<span class="token punctuation">.</span>jar
+jstl<span class="token operator">-</span>impl<span class="token punctuation">.</span>jar
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="3-2-2-使用taglib指令在jsp页面导入要使用的jstl标签库"><a href="#3-2-2-使用taglib指令在jsp页面导入要使用的jstl标签库" class="headerlink" title="3.2.2 使用taglib指令在jsp页面导入要使用的jstl标签库"></a>3.2.2 使用taglib指令在jsp页面导入要使用的jstl标签库</h3><pre class="line-numbers language-jsp"><code class="language-jsp"><%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></%@></code></pre>
+<p>在jsp书写”&lt;c:”，看到如下提示，说明安装成功：</p>
+<p><img src="005.png" alt></p>
+<h2 id="3-3-常用的jstl标签"><a href="#3-3-常用的jstl标签" class="headerlink" title="3.3 常用的jstl标签"></a>3.3 常用的jstl标签</h2><p>​    jstl的核心标签内容有很多，现在目前还常用的标签只有if、foreach标签，接下来我们学习下。</p>
+<h3 id="3-3-1-if标签"><a href="#3-3-1-if标签" class="headerlink" title="3.3.1 if标签"></a>3.3.1 if标签</h3><h4 id="3-3-1-1-if标签作用"><a href="#3-3-1-1-if标签作用" class="headerlink" title="3.3.1.1 if标签作用"></a>3.3.1.1 if标签作用</h4><p>​    <strong>起到java代码的判断的作用</strong></p>
+<h4 id="3-3-1-2-if标签属性介绍"><a href="#3-3-1-2-if标签属性介绍" class="headerlink" title="3.3.1.2 if标签属性介绍"></a>3.3.1.2 if标签属性介绍</h4><p><img src="06.png" alt></p>
+<p>​    <strong>test：判断是否执行标签内的内容（true:执行标签中的内容，false:不执行）。</strong></p>
+<p>​    <strong>var：用来保存test属性的结果（使用var属性给他取个名字），这个结果可以保存到指定的容器中。</strong></p>
+<p>​    <strong>scope：指定保存数据的容器。</strong></p>
+<p>​    <strong>注：是否支持EL表达式指的是 是否可以在属性中书写EL表达式。</strong></p>
+<h4 id="3-3-1-3-if标签注意事项"><a href="#3-3-1-3-if标签注意事项" class="headerlink" title="3.3.1.3 if标签注意事项"></a>3.3.1.3 if标签注意事项</h4><p>​    <strong>if标签，相当于java中的if(){}语句，而不是if(){}else{}语句</strong></p>
+<p>​    <strong>按照属性的数据类型传入数据，否则报错</strong></p>
+<h4 id="3-3-1-4-if标签演示"><a href="#3-3-1-4-if标签演示" class="headerlink" title="3.3.1.4 if标签演示"></a>3.3.1.4 if标签演示</h4><pre class="line-numbers language-jsp"><code class="language-jsp"><%@ page contenttype="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <title>Title</title>
+</head>
+<body>
+    <%-- 获取test属性的值,将其以flag为属性名,test中计算的值为属性,放入session中 --%>
+    <c:if test="${ 3>4 }" scope="session" var="flag">
+        测试test标签
+    </c:if>
+      <br>
+      在页面上判断:3是否大于4,若页面上能显示"测试test标签",证明test的返回值为true;test中表达式的运算结果为:${session.flag}
+</%--></body>
+</html>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></%@></%@></code></pre>
+<h3 id="3-3-2-foreach标签"><a href="#3-3-2-foreach标签" class="headerlink" title="3.3.2 foreach标签"></a>3.3.2 foreach标签</h3><h4 id="3-3-2-1-foreach标签作用"><a href="#3-3-2-1-foreach标签作用" class="headerlink" title="3.3.2.1 foreach标签作用"></a>3.3.2.1 foreach标签作用</h4><p>​    <strong>起到java代码的for循环作用</strong></p>
+<h4 id="3-3-2-2-foreach标签属性介绍"><a href="#3-3-2-2-foreach标签属性介绍" class="headerlink" title="3.3.2.2 foreach标签属性介绍"></a>3.3.2.2 foreach标签属性介绍</h4><p><img src="07.png" alt></p>
+<p><strong>var：在不循环对象的时候，保存的是控制循环的变量；在循环对象的时候，保存的是被循环对象中的元素</strong></p>
+<p><strong>items：指定要循环的对象</strong></p>
+<p><strong>varStatus：保存了当前循环过程中的信息（循环的开始、结束、步长、次数等）</strong></p>
+<p><strong>begin：设置循环的开始</strong></p>
+<p><strong>end：设置循环的结束</strong></p>
+<p><strong>step：设置步长——间隔几次循环，执行一次循环体中的内容</strong></p>
+<h4 id="3-3-2-3-foreach标签演示"><a href="#3-3-2-3-foreach标签演示" class="headerlink" title="3.3.2.3 foreach标签演示"></a>3.3.2.3 foreach标签演示</h4><p>​    演示foreach循环标签的时候我们分开两种情况：不循环对象和循环对象。</p>
+<p>​    我们先来看不循环对象的时候：</p>
+<h5 id="3-3-2-3-1-foreach不循环对象"><a href="#3-3-2-3-1-foreach不循环对象" class="headerlink" title="3.3.2.3.1 foreach不循环对象"></a>3.3.2.3.1 foreach不循环对象</h5><p>begin、end、step 三属性的演示：设置循环开始、结束和步长。</p>
+<pre class="line-numbers language-jsp"><code class="language-jsp"><%@ page contenttype="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <title>Title</title>
+</head>
+<body>
+<%-- 演示foreach标签 --%>
+<% for (int i="1;" <="5;" i++) { } %>
+<%-- 1 2 3 4 5 12 34 45 123 1234 12345 begin="1" int i="1;" end="5" i<="5;" step="6" 步长，控制循环，间隔几次循环，执行一次循环体中的内容 m --%>
+<c:foreach begin="1" end="5" step="1">
+    M
+</c:foreach>
+</%--></%></%--></body>
+</html>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></%@></%@></code></pre>
+<p>var属性演示：在不循环对象的时候，相当于将for循环中的循环变量i，每次都记录下来</p>
+<pre class="line-numbers language-jsp"><code class="language-jsp"><%@ page contenttype="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <title>Title</title>
+</head>
+<body>
+<%-- 演示foreach标签 --%>
+<% for (int i="1;" <="5;" i++) { } %>
+<%-- var 属性在不循环对象的时候，相当于将for循环中的循环变量i，每次都记录下来。 --%>
+<c:foreach begin="11" end="15" step="1" var="info">
+    ${info}
+</c:foreach>
+</%--></%></%--></body>
+</html>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></%@></%@></code></pre>
+<p>varStatus属性演示：保存了当前循环过程中的信息</p>
+<pre class="line-numbers language-jsp"><code class="language-jsp"><%@ page contenttype="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <title>Title</title>
+</head>
+<body>
+<%-- 演示foreach标签 --%>
+<%-- 1 2 3 4 5 6 7 8 varstatus :保存了当前循环过程中的信息，信息包括以下内容： public java.lang.integer getbegin() 返回为标签设置的begin属性的值，如果没有设置begin属性则返回null int getcount() 返回当前已循环迭代的次数 java.lang.object getcurrent() 返回当前迭代到的元素对象 getend() 返回为标签设置的end属性的值，如果没有设置end属性则返回null getindex() 返回当前迭代的索引号 getstep() 返回为标签设置的step属性的值，如果没有设置step属性则返回null boolean isfirst() 返回当前是否是第一次迭代操作 islast() 返回当前是否是最后一次迭代操作 --%>
+<c:foreach begin="11" end="15" step="1" var="info" varstatus="sta">
+    <td>${sta.index}</td>
+    <td>${sta.count}</td>
+    <td>${sta.first}</td>
+    <td>${sta.last}</td><br>
+</c:foreach>
+</%--></%--></body>
+</html>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></%@></%@></code></pre>
+<p>接下来我们在来看foreach如何循环对象</p>
+<h5 id="3-3-2-3-2-foreach循环对象（数组、list、map）"><a href="#3-3-2-3-2-foreach循环对象（数组、list、map）" class="headerlink" title="3.3.2.3.2 foreach循环对象（数组、list、map）"></a>3.3.2.3.2 foreach循环对象（数组、list、map）</h5><pre class="line-numbers language-jsp"><code class="language-jsp"><%--import="java.util.*"导入java.util下的内容，给当前jsp使用--%>
+<%@ page contenttype="text/html;charset=UTF-8" import="java.util.*" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <title>Title</title>
+</head>
+<body>
+<%--演示循环数组--%>
+<% int[] arr="{666,888,999,1024};" request.setattribute("arr", arr); %>
+<%-- var在循环对象的时候，临时保存被循环到元素 --%>
+<c:foreach items="${arr }" var="num">
+${num }
+</c:foreach>
+<hr>
+<% list arraylist(); list.add("卡奴"); list.add("兰恩"); list.add("云娜"); request.setattribute("list", list); %>
+<c:foreach items="${list }" var="wind">
+    ${wind }
+</c:foreach>
+<hr>
+<% map hashmap(); map.put("ms1", "简历"); map.put("ms2", "身份证"); map.put("ms3", "学历证明"); map.put("ms4", "体检报告"); request.setattribute("map", map); %>
+<c:foreach items="${map }" var="entry">
+
+    ${entry.key }
+    ${entry.value }
+</c:foreach>
+</%></%></%--></%></%--演示循环数组--%></body>
+</html>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></%@></%@></%--import="java.util.*"导入java.util下的内容，给当前jsp使用--%></code></pre>
+<h1 id="第4章-MVC模式和三层架构"><a href="#第4章-MVC模式和三层架构" class="headerlink" title="第4章  MVC模式和三层架构"></a>第4章  MVC模式和三层架构</h1><h2 id="4-1-MVC设计模式"><a href="#4-1-MVC设计模式" class="headerlink" title="4.1 MVC设计模式"></a>4.1 MVC设计模式</h2><p>MVC设计模式： Model-View-Controller简写。</p>
+<p>MVC是软件工程中的一种软件架构模式，它是一种<strong>分离业务逻辑</strong>与<strong>显示界面</strong>的设计方法。它把软件系统分为三个基本部分：模型（Model）、视图（View）和控制器（Controller）。</p>
+<ul>
+<li>控制器Controller：对请求进行处理，负责请求转发；</li>
+<li>视图View：界面设计人员进行图形界面设计；</li>
+<li>模型Model：编写程序应用的功能（实现算法等等）、数据库管理；</li>
+</ul>
+<p>​    MVC可对程序的后期维护和扩展提供了方便，并且使程序某些部分的重用提供了方便。而且MVC也使程序简化，更加直观。</p>
+<p>​    注意，MVC不是Java的特有的，几乎现在所有B/S结构的软件都采用了MVC设计模式。</p>
+<h2 id="4-2-JSP开发模式"><a href="#4-2-JSP开发模式" class="headerlink" title="4.2 JSP开发模式"></a>4.2 JSP开发模式</h2><p>​    当SUN公司推出JSP后，同时也提供相应的开发模式，JavaWeb经历了JSP Model1 第一代，JSPModel2第二代，JSP Model 3 三个时期。</p>
+<p>###4.2.1.JSP Model1 第一代</p>
+<p>​    JSP Model1是JavaWeb早期的模型，它适合小型Web项目，开发成本低！Model1第一代时期，服务器端只有JSP页面，所有的操作都在JSP页面中，连访问数据库的API也在JSP页面中完成。也就是说，所有的东西都在一起，对后期的维护和扩展极为不利。</p>
+<p><img src="temp1.png" alt></p>
+<h3 id="4-2-2-JSP-Model1-第二代"><a href="#4-2-2-JSP-Model1-第二代" class="headerlink" title="4.2.2 JSP Model1 第二代"></a>4.2.2 JSP Model1 第二代</h3><p>​    JSP Model1第二代有所改进，把业务逻辑的内容放到了JavaBean中，而JSP页面负责显示以及请求调度的工作。虽然第二代比第一代好了些，但还让JSP做了过多的工作，JSP中把视图工作和请求调度（控制器）的工作耦合在一起了。</p>
+<p><img src="temp2.png" alt>     </p>
+<h3 id="4-2-3-JSP-Model-2"><a href="#4-2-3-JSP-Model-2" class="headerlink" title="4.2.3 JSP Model 2"></a>4.2.3 JSP Model 2</h3><p>Model2使用到的技术有：Servlet、JSP、JavaBean。Model2 是MVC设计模式在Java语言的具体体现。</p>
+<ul>
+<li><p>JSP：视图层，用来与用户打交道。负责接收用来的数据，以及显示数据给用户；</p>
+</li>
+<li><p>Servlet：控制层，负责找到合适的模型对象来处理业务逻辑，转发到合适的视图；</p>
+</li>
+<li><p>JavaBean：模型层，完成具体的业务工作，例如：转账等。</p>
+</li>
+</ul>
+<p><img src="temp3.png" alt></p>
+<h2 id="4-3-三层架构"><a href="#4-3-三层架构" class="headerlink" title="4.3 三层架构"></a>4.3 三层架构</h2><p>​    JSP模式是理论基础，但实际开发中，我们常将服务器端程序，根据逻辑进行分层。一般比较常见的是分三层，我们称为：经典三层体系架构。三层分别是：表示层、业务逻辑层、数据访问层。</p>
+<ul>
+<li>表示层：又称为 web层，与浏览器进行数据交互的。</li>
+<li>业务逻辑层：又称为service层，专门用于处理业务数据的。</li>
+<li>数据访问层：又称为dao层，与数据库进行数据交换的。将数据库的一条记录与JavaBean进行对应。</li>
+</ul>
+<p><img src="temp4.png" alt></p>
+<p>在我们开发的时候一般是通过包结果来体现三层架构的,三层架构包命名一般如下：</p>
+<ul>
+<li><p>简单版</p>
+<p>cn.itcast             公司域名倒写</p>
+<p>cn.itcast.dao         dao层</p>
+<p>cn.itcast.service        service层</p>
+<p>cn.itcast.web.servlet     web层</p>
+<p>cn.itcast.domain         JavaBean</p>
+<p>cn.itcast.utils         工具</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p>完整版</p>
+<p>cn.itcast                     公司域名倒写</p>
+<p>cn.itcast.xxx                     项目名称</p>
+<p>cn.itcast.xxx.yyy                 子模块</p>
+<p>cn.itcast.xxx.yyy.dao             子模块dao层接口</p>
+<p>cn.itcast.xxx.yyy.dao.impl        子模块dao层实现类</p>
+<p>cn.itcast.xxx.yyy.service        子模块service层接口</p>
+<p>cn.itcast.xxx.yyy.service.impl    子模块service层实现类</p>
+<p>cn.itcast.xxx.yyy.domain        子模块JavaBean (子模块yyy可省略)</p>
+<p>cn.itcast.xxx.yyy.web.servlet    子模块web层，servlet</p>
+<p>cn.itcast.xxx.yyy.web.filter        子模块web层，filter</p>
+<p>cn.itcast.xxx.utils                 工具</p>
+<p>cn.itcast.xxx.exception         自定义异常</p>
+<p>cn.itcast.xxx.constant             常量</p>
+</li>
+</ul>
+<h1 id="第5章-使用三层架构和MCV模式完成用户显示列表案例"><a href="#第5章-使用三层架构和MCV模式完成用户显示列表案例" class="headerlink" title="第5章 使用三层架构和MCV模式完成用户显示列表案例"></a>第5章 使用三层架构和MCV模式完成用户显示列表案例</h1><h2 id="5-1-案例需求"><a href="#5-1-案例需求" class="headerlink" title="5.1 案例需求"></a>5.1 案例需求</h2><p>​    使用三层架构和MVC模式开发代码，完成用户显示列表功能。</p>
+<h2 id="5-2-案例效果"><a href="#5-2-案例效果" class="headerlink" title="5.2 案例效果"></a>5.2 案例效果</h2><p><img src="09.png" alt></p>
+<h2 id="5-3-案例分析"><a href="#5-3-案例分析" class="headerlink" title="5.3 案例分析"></a>5.3 案例分析</h2><p><img src="10.png" alt></p>
+<h2 id="5-4-实现步骤"><a href="#5-4-实现步骤" class="headerlink" title="5.4 实现步骤"></a>5.4 实现步骤</h2><h3 id="5-4-1-导入页面"><a href="#5-4-1-导入页面" class="headerlink" title="5.4.1 导入页面"></a>5.4.1 导入页面</h3><pre class="line-numbers language-jsp"><code class="language-jsp"><%@ page contenttype="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
+<!-- 网页使用的语言 -->
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- 指定字符集 -->
+    <meta charset="utf-8">
+    <!-- 使用Edge最新的浏览器的渲染方式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- viewport视口：网页可以根据设置的宽度自动进行适配，在浏览器的内部虚拟一个容器，容器的宽度与设备的宽度相同。
+    width: 默认宽度与设备的宽度相同
+    initial-scale: 初始的缩放比，为1:1 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap模板</title>
+
+    <!-- 1. 导入CSS的全局样式 -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- 2. jQuery导入，建议使用1.9以上的版本 -->
+    <script src="js/jquery-2.1.0.min.js"></script>
+    <!-- 3. 导入bootstrap的js文件 -->
+    <script src="js/bootstrap.min.js"></script>
+    <style type="text/css">
+        td, th {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h3 style="text-align: center">显示所有联系人</h3>
+    <table border="1" class="table table-bordered table-hover">
+        <tr class="success">
+            <th>编号</th>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>年龄</th>
+            <th>籍贯</th>
+            <th>QQ</th>
+            <th>邮箱</th>
+            <th>操作</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>张三</td>
+            <td>男</td>
+            <td>20</td>
+            <td>广东</td>
+            <td>44444222</td>
+            <td>zs@qq.com</td>
+            <td><a class="btn btn-default btn-sm" href="修改联系人.html">修改</a>&nbsp;<a class="btn btn-default btn-sm" href="修改联系人.html">删除</a></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>张三</td>
+            <td>男</td>
+            <td>20</td>
+            <td>广东</td>
+            <td>44444222</td>
+            <td>zs@qq.com</td>
+            <td><a class="btn btn-default btn-sm" href="修改联系人.html">修改</a>&nbsp;<a class="btn btn-default btn-sm" href="修改联系人.html">删除</a></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>张三</td>
+            <td>男</td>
+            <td>20</td>
+            <td>广东</td>
+            <td>44444222</td>
+            <td>zs@qq.com</td>
+            <td><a class="btn btn-default btn-sm" href="修改联系人.html">修改</a>&nbsp;<a class="btn btn-default btn-sm" href="修改联系人.html">删除</a></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>张三</td>
+            <td>男</td>
+            <td>20</td>
+            <td>广东</td>
+            <td>44444222</td>
+            <td>zs@qq.com</td>
+            <td><a class="btn btn-default btn-sm" href="修改联系人.html">修改</a>&nbsp;<a class="btn btn-default btn-sm" href="修改联系人.html">删除</a></td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>张三</td>
+            <td>男</td>
+            <td>20</td>
+            <td>广东</td>
+            <td>44444222</td>
+            <td>zs@qq.com</td>
+            <td><a class="btn btn-default btn-sm" href="修改联系人.html">修改</a>&nbsp;<a class="btn btn-default btn-sm" href="修改联系人.html">删除</a></td>
+        </tr>
+        <tr>
+            <td colspan="8" align="center"><a class="btn btn-primary" href="添加联系人.html">添加联系人</a></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></%@></code></pre>
+<h3 id="5-4-2-导入页面相关的资源文件"><a href="#5-4-2-导入页面相关的资源文件" class="headerlink" title="5.4.2 导入页面相关的资源文件"></a>5.4.2 导入页面相关的资源文件</h3><p>复制今天资料文件夹/案例原型下的三个文件夹到web根路径：</p>
+<pre><code>css
+fonts
+js
+</code></pre><h3 id="5-4-3-导入jar包、配置文件、实体类和工具类"><a href="#5-4-3-导入jar包、配置文件、实体类和工具类" class="headerlink" title="5.4.3 导入jar包、配置文件、实体类和工具类"></a>5.4.3 导入jar包、配置文件、实体类和工具类</h3><ol>
+<li><p>导入jar包</p>
+</li>
+<li><p>配置文件:druid-config.properties</p>
+<pre><code>driverClass:com.mysql.jdbc.Driver
+jdbcUrl:jdbc:mysql:///day05
+username:root
+password:root
+</code></pre></li>
+</ol>
+<ol start="3">
+<li><p>实体类</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> cn<span class="token punctuation">.</span>itcast<span class="token punctuation">.</span>domain<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Contact</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">int</span> id<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> String name<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> String sex<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> String address<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> String qq<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> String email<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> id<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setId</span><span class="token punctuation">(</span><span class="token keyword">int</span> id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>id <span class="token operator">=</span> id<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> String <span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> name<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setName</span><span class="token punctuation">(</span>String name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> String <span class="token function">getSex</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> sex<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setSex</span><span class="token punctuation">(</span>String sex<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>sex <span class="token operator">=</span> sex<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> age<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setAge</span><span class="token punctuation">(</span><span class="token keyword">int</span> age<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> String <span class="token function">getAddress</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> address<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setAddress</span><span class="token punctuation">(</span>String address<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>address <span class="token operator">=</span> address<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> String <span class="token function">getQq</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> qq<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setQq</span><span class="token punctuation">(</span>String qq<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>qq <span class="token operator">=</span> qq<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> String <span class="token function">getEmail</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> email<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setEmail</span><span class="token punctuation">(</span>String email<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>email <span class="token operator">=</span> email<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> String <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string">"Contact{"</span> <span class="token operator">+</span>
+                <span class="token string">"id="</span> <span class="token operator">+</span> id <span class="token operator">+</span>
+                <span class="token string">", name='"</span> <span class="token operator">+</span> name <span class="token operator">+</span> <span class="token string">'\''</span> <span class="token operator">+</span>
+                <span class="token string">", sex='"</span> <span class="token operator">+</span> sex <span class="token operator">+</span> <span class="token string">'\''</span> <span class="token operator">+</span>
+                <span class="token string">", age="</span> <span class="token operator">+</span> age <span class="token operator">+</span>
+                <span class="token string">", address='"</span> <span class="token operator">+</span> address <span class="token operator">+</span> <span class="token string">'\''</span> <span class="token operator">+</span>
+                <span class="token string">", qq='"</span> <span class="token operator">+</span> qq <span class="token operator">+</span> <span class="token string">'\''</span> <span class="token operator">+</span>
+                <span class="token string">", email='"</span> <span class="token operator">+</span> email <span class="token operator">+</span> <span class="token string">'\''</span> <span class="token operator">+</span>
+                <span class="token string">'}'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ol>
+<ol start="4">
+<li><p>工具类</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> cn<span class="token punctuation">.</span>itcast<span class="token punctuation">.</span>utils<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>alibaba<span class="token punctuation">.</span>druid<span class="token punctuation">.</span>pool<span class="token punctuation">.</span>DruidDataSource<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>sql<span class="token punctuation">.</span>DataSource<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>sql<span class="token punctuation">.</span>Connection<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>sql<span class="token punctuation">.</span>SQLException<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>ResourceBundle<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">JDBCUtils</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">static</span> DruidDataSource dc <span class="token operator">=</span>  <span class="token keyword">new</span> <span class="token class-name">DruidDataSource</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">static</span> <span class="token punctuation">{</span>
+        ResourceBundle bundle <span class="token operator">=</span> ResourceBundle<span class="token punctuation">.</span><span class="token function">getBundle</span><span class="token punctuation">(</span><span class="token string">"druid-config"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        String driverClass <span class="token operator">=</span> bundle<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">"driverClass"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        String jdbcUrl <span class="token operator">=</span> bundle<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">"jdbcUrl"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        String username <span class="token operator">=</span> bundle<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">"username"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        String password <span class="token operator">=</span> bundle<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">"password"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        dc<span class="token punctuation">.</span><span class="token function">setDriverClassName</span><span class="token punctuation">(</span>driverClass<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        dc<span class="token punctuation">.</span><span class="token function">setUrl</span><span class="token punctuation">(</span>jdbcUrl<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        dc<span class="token punctuation">.</span><span class="token function">setUsername</span><span class="token punctuation">(</span>username<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        dc<span class="token punctuation">.</span><span class="token function">setPassword</span><span class="token punctuation">(</span>password<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> Connection <span class="token function">getConnection</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> SQLException <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> dc<span class="token punctuation">.</span><span class="token function">getConnection</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> DataSource <span class="token function">getDataSource</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> dc<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ol>
+<h3 id="5-4-4-编写servlet代码"><a href="#5-4-4-编写servlet代码" class="headerlink" title="5.4.4 编写servlet代码"></a>5.4.4 编写servlet代码</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> cn<span class="token punctuation">.</span>itcast<span class="token punctuation">.</span>web<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> cn<span class="token punctuation">.</span>itcast<span class="token punctuation">.</span>domain<span class="token punctuation">.</span>Contact<span class="token punctuation">;</span>
+<span class="token keyword">import</span> cn<span class="token punctuation">.</span>itcast<span class="token punctuation">.</span>service<span class="token punctuation">.</span>ContactService<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>ServletException<span class="token punctuation">;</span>
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>WebServlet<span class="token punctuation">;</span>
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>http<span class="token punctuation">.</span>HttpServlet<span class="token punctuation">;</span>
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>http<span class="token punctuation">.</span>HttpServletRequest<span class="token punctuation">;</span>
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>http<span class="token punctuation">.</span>HttpServletResponse<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>IOException<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>List<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//urlPatterns = "/queryAll"</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">QueryAllServlet</span> <span class="token keyword">extends</span> <span class="token class-name">HttpServlet</span> <span class="token punctuation">{</span>
+    <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">doPost</span><span class="token punctuation">(</span>HttpServletRequest request<span class="token punctuation">,</span> HttpServletResponse response<span class="token punctuation">)</span> <span class="token keyword">throws</span> ServletException<span class="token punctuation">,</span> IOException <span class="token punctuation">{</span>
+        <span class="token function">doGet</span><span class="token punctuation">(</span>request<span class="token punctuation">,</span>response<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">doGet</span><span class="token punctuation">(</span>HttpServletRequest request<span class="token punctuation">,</span> HttpServletResponse response<span class="token punctuation">)</span> <span class="token keyword">throws</span> ServletException<span class="token punctuation">,</span> IOException <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//获取联系人数据</span>
+        ContactService contactService <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ContactService</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        List<span class="token operator">&lt;</span>Contact<span class="token operator">></span> list <span class="token operator">=</span> contactService<span class="token punctuation">.</span><span class="token function">queryAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//将联系人数据转发到页面展示</span>
+        request<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">"list"</span> <span class="token punctuation">,</span>list<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        request<span class="token punctuation">.</span><span class="token function">getRequestDispatcher</span><span class="token punctuation">(</span><span class="token string">"/list.jsp"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forward</span><span class="token punctuation">(</span>request<span class="token punctuation">,</span>response<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="5-4-5-编写service代码"><a href="#5-4-5-编写service代码" class="headerlink" title="5.4.5 编写service代码"></a>5.4.5 编写service代码</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> cn<span class="token punctuation">.</span>itcast<span class="token punctuation">.</span>service<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> cn<span class="token punctuation">.</span>itcast<span class="token punctuation">.</span>dao<span class="token punctuation">.</span>ContactDao<span class="token punctuation">;</span>
+<span class="token keyword">import</span> cn<span class="token punctuation">.</span>itcast<span class="token punctuation">.</span>domain<span class="token punctuation">.</span>Contact<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>List<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ContactService</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">private</span> ContactDao contactDao <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ContactDao</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> List<span class="token operator">&lt;</span>Contact<span class="token operator">></span> <span class="token function">queryAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> contactDao<span class="token punctuation">.</span><span class="token function">queryAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="5-4-6-编写dao代码"><a href="#5-4-6-编写dao代码" class="headerlink" title="5.4.6 编写dao代码"></a>5.4.6 编写dao代码</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> cn<span class="token punctuation">.</span>itcast<span class="token punctuation">.</span>dao<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> cn<span class="token punctuation">.</span>itcast<span class="token punctuation">.</span>domain<span class="token punctuation">.</span>Contact<span class="token punctuation">;</span>
+<span class="token keyword">import</span> cn<span class="token punctuation">.</span>itcast<span class="token punctuation">.</span>utils<span class="token punctuation">.</span>JDBCUtils<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>jdbc<span class="token punctuation">.</span>core<span class="token punctuation">.</span>JdbcTemplate<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>jdbc<span class="token punctuation">.</span>core<span class="token punctuation">.</span>RowMapper<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>sql<span class="token punctuation">.</span>ResultSet<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>sql<span class="token punctuation">.</span>SQLException<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>List<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ContactDao</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">private</span> JdbcTemplate template <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JdbcTemplate</span><span class="token punctuation">(</span>JDBCUtils<span class="token punctuation">.</span><span class="token function">getDataSource</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> List<span class="token operator">&lt;</span>Contact<span class="token operator">></span> <span class="token function">queryAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        String sql <span class="token operator">=</span> <span class="token string">"select * from contact"</span><span class="token punctuation">;</span>
+        List<span class="token operator">&lt;</span>Contact<span class="token operator">></span> query <span class="token operator">=</span> template<span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span>sql<span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">RowMapper</span><span class="token operator">&lt;</span>Contact<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token annotation punctuation">@Override</span>
+            <span class="token keyword">public</span> Contact <span class="token function">mapRow</span><span class="token punctuation">(</span>ResultSet rs<span class="token punctuation">,</span> <span class="token keyword">int</span> i<span class="token punctuation">)</span> <span class="token keyword">throws</span> SQLException <span class="token punctuation">{</span>
+
+                Contact contact <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Contact</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                contact<span class="token punctuation">.</span><span class="token function">setId</span><span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">getInt</span><span class="token punctuation">(</span><span class="token string">"id"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                contact<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                contact<span class="token punctuation">.</span><span class="token function">setSex</span><span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">"sex"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                contact<span class="token punctuation">.</span><span class="token function">setAge</span><span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">getInt</span><span class="token punctuation">(</span><span class="token string">"age"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                contact<span class="token punctuation">.</span><span class="token function">setAddress</span><span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">"address"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                contact<span class="token punctuation">.</span><span class="token function">setQq</span><span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">"qq"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                contact<span class="token punctuation">.</span><span class="token function">setEmail</span><span class="token punctuation">(</span>rs<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">"email"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>contact<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                <span class="token keyword">return</span> contact<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> query<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+            </div>
+            <hr>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://www.luv19.com" rel="external nofollow noreferrer">仙水忍</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://www.luv19.com/2019/03/27/2019-03-27-http-zhong-jsp-el-jstl/">http://www.luv19.com/2019/03/27/2019-03-27-http-zhong-jsp-el-jstl/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="http://www.luv19.com" target="_blank">仙水忍</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/JSP/">
+                                    <span class="chip bg-color">JSP</span>
+                                </a>
+                            
+                                <a href="/tags/EL/">
+                                    <span class="chip bg-color">EL</span>
+                                </a>
+                            
+                                <a href="/tags/JSTL/">
+                                    <span class="chip bg-color">JSTL</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2019/04/05/2019-04-05-http-zong-he-lian-xi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/236.jpg" class="responsive-img" alt="http综合练习">
+                        
+                        <span class="card-title">http综合练习</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            表单的删除/条件查询/分页查询。
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-04-05
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/HTTP/" class="post-category">
+                                    HTTP
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/HTML基础/">
+                        <span class="chip bg-color">HTML基础</span>
+                    </a>
+                    
+                    <a href="/tags/综合练习/">
+                        <span class="chip bg-color">综合练习</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/03/25/2019-03-25-cookie-yu-session/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/134.jpg" class="responsive-img" alt="cookie与session">
+                        
+                        <span class="card-title">cookie与session</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            cookie基本使用，session应用场景。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-03-25
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/HTML/" class="post-category">
+                                    HTML
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/cookie/">
+                        <span class="chip bg-color">cookie</span>
+                    </a>
+                    
+                    <a href="/tags/session/">
+                        <span class="chip bg-color">session</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 仙水忍<br />'
+            + '文章作者: 仙水忍<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+    
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+
+<!-- 代码块折行 -->
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+		    Copyright&nbsp;&copy;
+            <span id="year">年份</span>
+            <a href="http://www.luv19.com" target="_blank">仙水忍</a>
+&nbsp;
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    window.setTimeout("siteTime()", 1000);
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2019";
+                    var startMonth = "2";
+                    var startDate = "19";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "已运行 " + diffDays + " 天 " + diffHours +
+                            " 时 " + diffMinutes + " 分 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "已运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 时 " + diffMinutes + " 分 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+	    
+
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点字数:&nbsp;<span
+                class="white-color">67.7k</span>&nbsp;字
+            
+			
+			<br>
+            
+			
+            
+            
+            
+			
+            
+            <span id="icp"><img src="/medias/icp.png" theme.icp.title style="vertical-align: text-bottom;" />
+                <a href="http://www.beian.miit.gov.cn/" target="_blank">鲁ICP备20002018号-1</a>
+            </span>
+            
+			&nbsp;
+            
+            <span id="busuanzi_container_site_pv">
+                &nbsp;<i class="far fa-eye"></i>&nbsp;访问总量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+			
+			
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+
+
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://www.github.com/fishyo9" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:fishyo9@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="https://www.facebook.com/llfishyo" class="tooltipped" target="_blank" data-tooltip="关注我的Facebook: https://www.facebook.com/llfishyo" data-position="top" data-delay="50">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+
+
+
+    <a href="https://twitter.com/fishyo9" class="tooltipped" target="_blank" data-tooltip="关注我的Twitter: https://twitter.com/fishyo9" data-position="top" data-delay="50">
+        <i class="fab fa-twitter"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=188197110" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 188197110" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
+    
+
+    
+
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+	
+<!-- 动态标题 -->
+    <script type="text/javascript"> var OriginTitile = document.title,
+    st; document.addEventListener("visibilitychange", 
+    function () { document.hidden ? (document.title = "せんすいしのぶ",
+    clearTimeout(st)) : (document.title = "せんすいしのぶ", st = setTimeout(function () 
+    { document.title = OriginTitile }, 3e3)) }) 
+    </script>
+
+<!-- 雪花特效 -->
+    
+
+<!-- 网站预加载js脚本 -->
+   <script src="../source/js/instant.page.js" type="module"></script>
+
+</body>
+</html>

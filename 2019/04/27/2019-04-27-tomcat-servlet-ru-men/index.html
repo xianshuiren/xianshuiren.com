@@ -1,0 +1,1782 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="tomcat&amp;servlet入门, 仙水忍 仙水忍博客 仙水博客 自律的鱼">
+    <meta name="description" content="Tomcat服务器&amp;amp;servlet入门程序第1章 tomcat服务器1.1 软件的架构1.1.1 网络应用程序（软件）的组成网络中有很多的计算机，它们直接的信息交流，我们称之为：交互。在互联网交互的过程的有两个非常典型的交互方式——">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="baidu-site-verification" content="XByRFWJPnr">
+	
+    <title>tomcat&amp;servlet入门 | 仙水忍</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+    <style type="text/css">
+        
+    </style>
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?46e79e71af0709a5b9106bf20cecc493";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper head-container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">仙水忍</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于我</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list" style="zoom: 0.6;"></i>
+      
+      <span>媒体</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/medias/musics">
+          
+          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>音乐</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/medias/videos">
+          
+          <i class="fas fa-film" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>视频</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/medias/books">
+          
+          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>阅读</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/medias/galleries">
+          
+          <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>图片</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list" style="zoom: 0.6;"></i>
+      
+      <span>其他</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/others/download">
+          
+          <i class="fas fa-download" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>下载</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">仙水忍</div>
+        <div class="logo-desc">
+            
+            仙水忍_仙水忍博客是一个专注于计算机技术及其他资源分享的个人博客，站内相关资源均由本人整理自网络，欢迎学习交流及分享各种资源。
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list"></i>
+			
+			媒体
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>   
+				
+                  <a href="/medias/musics " style="margin-left:50px";>
+				  
+				   <i class="fa fas fa-music" style="position: absolute;left:28px" ></i>
+			      
+		          <span>音乐</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/medias/videos " style="margin-left:50px";>
+				  
+				   <i class="fa fas fa-film" style="position: absolute;left:28px" ></i>
+			      
+		          <span>视频</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/medias/books " style="margin-left:50px";>
+				  
+				   <i class="fa fas fa-book" style="position: absolute;left:28px" ></i>
+			      
+		          <span>阅读</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/medias/galleries " style="margin-left:50px";>
+				  
+				   <i class="fa fas fa-image" style="position: absolute;left:28px" ></i>
+			      
+		          <span>图片</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list"></i>
+			
+			其他
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>   
+				
+                  <a href="/others/download " style="margin-left:50px";>
+				  
+				   <i class="fa fas fa-download" style="position: absolute;left:28px" ></i>
+			      
+		          <span>下载</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/fishyo9" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/fishyo9" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/206.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        tomcat&amp;servlet入门
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Tomcat/">
+                                <span class="chip bg-color">Tomcat</span>
+                            </a>
+                        
+                            <a href="/tags/Servlet/">
+                                <span class="chip bg-color">Servlet</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/服务器/" class="post-category">
+                                服务器
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-04-27
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    4.6k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    17 分
+                </div>
+                
+				
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+            
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Tomcat服务器-amp-servlet入门程序"><a href="#Tomcat服务器-amp-servlet入门程序" class="headerlink" title="Tomcat服务器&amp;servlet入门程序"></a>Tomcat服务器&amp;servlet入门程序</h1><h1 id="第1章-tomcat服务器"><a href="#第1章-tomcat服务器" class="headerlink" title="第1章 tomcat服务器"></a>第1章 tomcat服务器</h1><h2 id="1-1-软件的架构"><a href="#1-1-软件的架构" class="headerlink" title="1.1 软件的架构"></a>1.1 软件的架构</h2><h3 id="1-1-1-网络应用程序（软件）的组成"><a href="#1-1-1-网络应用程序（软件）的组成" class="headerlink" title="1.1.1 网络应用程序（软件）的组成"></a>1.1.1 网络应用程序（软件）的组成</h3><p>网络中有很多的计算机，它们直接的信息交流，我们称之为：交互。<br>在互联网交互的过程的有两个非常典型的交互方式——B/S 交互模型和C/S 交互模型。</p>
+<p><strong>什么是B/S 交互模型？</strong></p>
+<p>答：就是浏览器和服务器交互模型。</p>
+<p><strong>什么是C/S 交互模型？</strong></p>
+<p>答：就是客户端（例如：百度网盘）和服务器交互模型。</p>
+<p><strong>B/S 和C/S交互模型相同点和不同点：</strong></p>
+<p><strong>相同点：</strong></p>
+<ol>
+<li><p><strong>都是基于请求-响应交互模型，即：</strong></p>
+<p><strong>浏览器（客户端） 向 服务器发送 一个 请求。</strong></p>
+<p><strong>服务器 向 浏览器（客户端）回送 一个 响应 。</strong></p>
+</li>
+<li><p><strong>必须先有请求 再有响应</strong> </p>
+</li>
+<li><p><strong>请求和响应成对出现</strong> </p>
+</li>
+</ol>
+<p><strong>不同点：</strong></p>
+<ol>
+<li><strong>实现C/S模型需要用户在自己的操作系统安装各种客户端软件（百度网盘、腾讯QQ等）；实现B/S模型，只需要用户在操作系统中安装浏览器即可。</strong></li>
+</ol>
+<p>注：B/S模型可以理解为一种特殊C/S模型。</p>
+<h2 id="1-2-web资源的类别"><a href="#1-2-web资源的类别" class="headerlink" title="1.2 web资源的类别"></a>1.2 web资源的类别</h2><h3 id="1-2-1-静态资源"><a href="#1-2-1-静态资源" class="headerlink" title="1.2.1 静态资源"></a>1.2.1 静态资源</h3><pre><code>  指web页面中供人们浏览的数据始终是不变。比如：HTML、CSS、JS、图片、音频、视频。</code></pre><h3 id="1-2-2-动态资源"><a href="#1-2-2-动态资源" class="headerlink" title="1.2.2 动态资源"></a>1.2.2 动态资源</h3><pre><code>  指web页面中供人们浏览的数据是由程序产生的，不同时间点访问web页面看到的内容各不相同。</code></pre><p>比如：你在不同时间搜索微博的热门话题内容是不一样的，每天的天气情况也是变化的。这些数据由程序生成，JSP/Servlet、ASP、PHP等技术都可以完成。</p>
+<pre><code>总结：
+    静态资源的数据都是写死在页面上的固定不变。
+    动态资源浏览器访问的结果是变化的（动态web资源你的数据都是程序读取数据库、xml等文件生成的数据）。</code></pre><p>​    接下来主要学习动态web资源。      </p>
+<h2 id="1-3-服务器的概念"><a href="#1-3-服务器的概念" class="headerlink" title="1.3 服务器的概念"></a>1.3 服务器的概念</h2><h3 id="1-3-1-什么是服务器"><a href="#1-3-1-什么是服务器" class="headerlink" title="1.3.1 什么是服务器"></a>1.3.1 什么是服务器</h3><p>​    服务器就是一个软件，任何电脑只需要安装上了服务器软件，然后该电脑的指定目录下的资源就能提供对外访问。</p>
+<h2 id="1-4-服务器的作用"><a href="#1-4-服务器的作用" class="headerlink" title="1.4 服务器的作用"></a>1.4 服务器的作用</h2><h3 id="1-4-1服务器的作用"><a href="#1-4-1服务器的作用" class="headerlink" title="1.4.1服务器的作用"></a>1.4.1服务器的作用</h3><p><strong>提供计算服务的设备，服务类型有很多，常见的有：游戏服务，购物服务，新闻服务等。</strong></p>
+<p><img src="59.png" alt></p>
+<h2 id="1-5-常见的服务器软件"><a href="#1-5-常见的服务器软件" class="headerlink" title="1.5 常见的服务器软件"></a>1.5 常见的服务器软件</h2><h3 id="1-5-1-常见的服务器软件介绍"><a href="#1-5-1-常见的服务器软件介绍" class="headerlink" title="1.5.1 常见的服务器软件介绍"></a>1.5.1 常见的服务器软件介绍</h3><ol>
+<li><p><strong>WebLogic</strong></p>
+<p>​    Oracle公司的产品，是目前应用最广泛的Web服务器，支持J2EE规范。WebLogic是用于开发、集成、部署和管理大型分布式Web应用、网络应用和数据库应用的Java应用服务器。</p>
+</li>
+<li><p><strong>WebSphere</strong></p>
+<p>​       IBM公司的WebSphere，支持JavaEE规范。WebSphere 是随需应变的电子商务时代的最主要的软件平台，可用于企业开发、部署和整合新一代的电子商务应用。</p>
+</li>
+<li><p><strong>Glass Fish</strong></p>
+<p>​      最早是Sun公司的产品，后来被Oracle收购，开源，中型服务器。</p>
+</li>
+<li><p><strong>JBoss</strong> </p>
+<p>​      JBoss公司产品，开源，支持JavaEE规范，占用内存、硬盘小，安全性和性能高。</p>
+</li>
+<li><p><strong>Tomcat</strong></p>
+<p>​    中小型的应用系统，免费开源，支持JSP和Servlet。    </p>
+<p>​    注意：今天我们学习和使用的是tomcat服务器。</p>
+</li>
+</ol>
+<h2 id="1-6-tomcat服务器软件安装和介绍"><a href="#1-6-tomcat服务器软件安装和介绍" class="headerlink" title="1.6 tomcat服务器软件安装和介绍"></a>1.6 tomcat服务器软件安装和介绍</h2><p>Tomcat基本概述：    </p>
+<p>​    Tomcat服务器是一个免费的开放源代码的Web应用服务器。Tomcat是Apache软件基金会（Apache Software Foundation）的Jakarta项目中的一个核心项目，由Apache、Sun和其他一些公司及个人共同开发而成。由于有了Sun的参与和支持，最新的Servlet 和JSP规范总是能在Tomcat中得到体现。</p>
+<p>​    因为Tomcat技术先进、性能稳定，而且免费，因而深受Java爱好者的喜爱并得到了部分软件开发商的认可，是目前比较流行的Web应用服务器。</p>
+<h3 id="1-6-1-tomcat服务器软件下载"><a href="#1-6-1-tomcat服务器软件下载" class="headerlink" title="1.6.1 tomcat服务器软件下载"></a>1.6.1 tomcat服务器软件下载</h3><ol>
+<li><p><strong>先去官网下载：<a href="http://tomcat.apache.org/，选择tomcat8版本（红框所示）" target="_blank" rel="noopener">http://tomcat.apache.org/，选择tomcat8版本（红框所示）</a></strong>：</p>
+<p><img src="01.png" alt></p>
+</li>
+<li><p><strong>选择要下载的文件（红框所示）</strong>：</p>
+<p><img src="02.png" alt></p>
+<p> tar.gz 文件 是linux操作系统下的安装版本</p>
+<p> exe文件是window操作系统下的安装版本</p>
+<p> zip文件是window操作系统下压缩版本（我们选择zip文件）</p>
+</li>
+</ol>
+<ol start="3">
+<li><strong>下载完成</strong>：</li>
+</ol>
+<p><img src="03.png" alt></p>
+<h3 id="1-6-2-tomcat服务器软件安装"><a href="#1-6-2-tomcat服务器软件安装" class="headerlink" title="1.6.2 tomcat服务器软件安装"></a>1.6.2 tomcat服务器软件安装</h3><ol>
+<li><p><strong>直接解压当前这个tomcat压缩包</strong>：</p>
+</li>
+<li><p><strong>配置环境变量</strong>：</p>
+<p>tomcat运行依赖于java环境：<br><img src="05.png" alt>        </p>
+</li>
+</ol>
+<h3 id="1-6-3-启动与关闭tomcat服务器"><a href="#1-6-3-启动与关闭tomcat服务器" class="headerlink" title="1.6.3 启动与关闭tomcat服务器"></a>1.6.3 启动与关闭tomcat服务器</h3><ol>
+<li><p><strong>启动tomcat服务器</strong></p>
+<p>查找tomcat目录下bin目录，查找其中的startup.bat命令，双击启动服务器：<br><img src="06.png" alt></p>
+<p>启动效果：<br><img src="07.png" alt></p>
+</li>
+</ol>
+<ol start="2">
+<li><p><strong>测试访问tomcat服务器</strong></p>
+<p>打开浏览器在，在浏览器的地址栏中输入：</p>
+<p><a href="http://127.0.0.1:8080" target="_blank" rel="noopener">http://127.0.0.1:8080</a></p>
+<p><a href="http://localhost:8080" target="_blank" rel="noopener">http://localhost:8080</a></p>
+<p><img src="08.png" alt></p>
+<p>注： Localhost相当于127.0.0.1</p>
+</li>
+</ol>
+<ol start="3">
+<li><strong>关闭tomcat服务器</strong></li>
+</ol>
+<p>​    常用方式1:查找tomcat目录下bin目录，查找其中的shutdown.bat命令，双击关闭服务器：<br><img src="09.png" alt></p>
+<p>​    常用方式2:可以点击cmd窗口的退出按钮</p>
+<h3 id="1-6-4-tomcat安装常见的问题"><a href="#1-6-4-tomcat安装常见的问题" class="headerlink" title="1.6.4 tomcat安装常见的问题"></a>1.6.4 tomcat安装常见的问题</h3><ol>
+<li><p><strong>无法启动（闪退：cmd命令窗口出现一下，就消失）</strong>：</p>
+<p>主要原因：没有配置JAVA_HOME环境变量。<br>JAVA_HOME 环境变量 中配置的是JDK的安装目录，不包含bin目录，不是tomcat的安装目录。</p>
+<p>闪退的原因查看：可以在startup.bat文件末尾书写pause命令。让运行的窗口暂停。</p>
+<p>效果：<br><img src="10.png" alt></p>
+</li>
+</ol>
+<ol start="2">
+<li><p><strong>端口被占用导致启动失败</strong></p>
+<p>如果启动的时候，发生异常问题，这时有可能是端口被占用。</p>
+<p>Tomcat服务器在启动的时候默认占用本地的8080端口，如果这个端口被占用，启动的时候就会报错。</p>
+<p>报错内容可以通过查询tomcat目录下的logs目录中Catalina.当前系统年月日.log文件查看，如下图：</p>
+<p><img src="11.png" alt></p>
+<p>我们需要做的是查看本地端口使用情况，关闭占用端口的程序：<br>在dos窗口中输入  netstat –nao 就可以查看当前端口的占用情况：</p>
+<p><img src="12.png" alt></p>
+<p>使用任务管理器—-&gt;选择详细信息—-&gt;查看pid为11604（查询出来的                                        值），关闭结束进程即可：</p>
+<p><img src="13.png" alt></p>
+<p>注意：如果这个进程是操作系统的任务进程，这时一般是不能停止这个进程。</p>
+<p>如果是系统进程占用端口，那么我们只能换一个端口，下面看如何修改端口：</p>
+</li>
+</ol>
+<ol start="3">
+<li><p><strong>修改tomcat启动端口</strong></p>
+<p>Tomcat服务器的配置文件，全部都在tomcat的安装目录下conf目录下：</p>
+</li>
+</ol>
+<p><img src="14.png" alt></p>
+<p>​    server.xml:服务器端口配置、服务器自身配置文件</p>
+<p>​    打开server.xml，修改服务器端口：</p>
+<p><img src="15.png" alt></p>
+<p>​    修改tomcat的端口为9090：</p>
+<p>​    修改完server.xml文件必须重启服务器才能有效。<br>​    通过浏览器的地址栏访问测试：<a href="http://localhost:9090" target="_blank" rel="noopener">http://localhost:9090</a></p>
+<h3 id="1-6-5-tomcat目录介绍"><a href="#1-6-5-tomcat目录介绍" class="headerlink" title="1.6.5 tomcat目录介绍"></a>1.6.5 tomcat目录介绍</h3><p><img src="04.png" alt="04"></p>
+<h2 id="1-7-web项目目录结构（重要）"><a href="#1-7-web项目目录结构（重要）" class="headerlink" title="1.7 web项目目录结构（重要）"></a>1.7 web项目目录结构（重要）</h2><p>在JavaEE规范中，WEB项目存在一定的目录结构，具体结构如下：</p>
+<p><img src="C:/Users/Administrator/Desktop/HTML/day27_tomcat_servlet/day27_tomcat_servlet/01_%E8%AE%B2%E4%B9%89/01_%E5%8F%82%E8%80%83_%E8%AE%B2%E4%B9%89/img/107.png" alt></p>
+<h2 id="1-8-tomcat的发布项目方式"><a href="#1-8-tomcat的发布项目方式" class="headerlink" title="1.8 tomcat的发布项目方式"></a>1.8 tomcat的发布项目方式</h2><h3 id="1-8-1-在webapps文件夹下面直接发布"><a href="#1-8-1-在webapps文件夹下面直接发布" class="headerlink" title="1.8.1 在webapps文件夹下面直接发布"></a>1.8.1 在webapps文件夹下面直接发布</h3><p>​    <strong>只要将准备好的web资源直接复制到tomcat/webapps文件夹下，就可以通过浏览器使用http协议访问获取</strong></p>
+<p>创建aaa文件夹：<img src="16.png" alt></p>
+<p>定义一个html文件，内容为：</p>
+<pre class="line-numbers language-html"><code class="language-html"> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>Hello Tomcat<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="1-8-2-使用虚拟路径的方式发布项目（两种方式）"><a href="#1-8-2-使用虚拟路径的方式发布项目（两种方式）" class="headerlink" title="1.8.2 使用虚拟路径的方式发布项目（两种方式）"></a>1.8.2 使用虚拟路径的方式发布项目（两种方式）</h3><ol>
+<li><p><strong>第一种：配置server.xml，添加context标签</strong></p>
+<p>第一步：在c盘work目录下创建一个文件夹为aa，在aa文件夹中添加一个1.html文件内容为：hello world！！！</p>
+<p>​    <img src="24.png" alt></p>
+<p>​    第二步：在tomcat/conf/server.xml中找到<host>标签，添加<context>标签，如图所示：<img src="25.png" alt></context></host></p>
+<p><strong>注：这一种方式有一个缺点，就是server.xml是tomcat核心文件一旦出错，导致整个tomcat无法启动。</strong></p>
+</li>
+</ol>
+<ol start="2">
+<li><p><strong>第二种：配置独立xml文件</strong></p>
+<p>第一步：在tomcat/conf目录下新建一个Catalina目录（如果已经存在无需创建）<br><img src="26.png" alt><br>​第二步：在Catalina目录下创建localhost目录<br><img src="27.png" alt><br>​第三步：在localhost中创建xml配置文件，名称为：second（注：这个名称是浏览器访问路径）<br><img src="28.png" alt><br>​第四步：添加xml文件的内容为：</p>
+<context docbase="C:\work\bb">
+
+<p>第五步：在C:\work\bb下创建1.html，内容为“hello tomcat！！！”，访问测试<br><img src="29.png" alt></p>
+</context></li>
+</ol>
+<p><strong>第二种发布方式的优点：无需重启服务器自动加载和卸载项目</strong></p>
+<p>演示：<br>在second.xml创建一个bak文件夹，将second.xml移动到bak文件夹之后：<br><img src="30.png" alt><br>服务器自动卸载项目：<br><img src="31.png" alt><br>将second.xml移动回到localhost目录下：<br><img src="32.png" alt><br>服务器自动加载项目（需要等待一会儿时间）：<br><img src="33.png" alt></p>
+<h2 id="1-9-IDEA中配置tomcat"><a href="#1-9-IDEA中配置tomcat" class="headerlink" title="1.9 IDEA中配置tomcat"></a>1.9 IDEA中配置tomcat</h2><p>因为我们开发的时候都是用IDE,所有我们要将idea和tomcat集成到一起，可以通过idea就控制tomcat的启动和关闭：</p>
+<h3 id="1-9-1-在工程中配置tomcat服务器"><a href="#1-9-1-在工程中配置tomcat服务器" class="headerlink" title="1.9.1 在工程中配置tomcat服务器"></a>1.9.1 在工程中配置tomcat服务器</h3><p><img src="42.png" alt></p>
+<p><img src="43.png" alt></p>
+<p><img src="44.png" alt></p>
+<p><img src="45.png" alt></p>
+<p><img src="46.png" alt></p>
+<p>点击OK回到配置目录,然后再次点击”Configure”</p>
+<blockquote>
+<p>此步不操作的话,会出现两个名称的服务器,一个”tomcat8”,一个”Tomcat 8.5.27”;前者不能使用,后面这个才是真正配置好的服务器,若不配置以下步骤,服务器也可以使用,都是使用”Tomcat 8.5.27”.为了避免这种现象建议操作此步.</p>
+</blockquote>
+<p><img src="47.png" alt></p>
+<p><img src="48.png" alt></p>
+<p>点击ok回到项目区,此时tomcat就配置完成了.</p>
+<blockquote>
+<p>注意:在一个项目中,以上的配置只需要配置一次即可.</p>
+</blockquote>
+<h3 id="1-9-2-测试配置"><a href="#1-9-2-测试配置" class="headerlink" title="1.9.2 测试配置"></a>1.9.2 测试配置</h3><ol>
+<li><p><strong>创建web项目：</strong></p>
+<p><img src="501.png" alt></p>
+<p><img src="502.png" alt></p>
+<p>给模块起个名字,点击finish即可<br><img src="504.png" alt></p>
+</li>
+<li><p><strong>配置访问路径</strong></p>
+<p><img src="505.png" alt></p>
+<p><img src="506.png" alt></p>
+<p>修改完成之后就可以启动tomcat服务器了.</p>
+<p><img src="507.png" alt></p>
+</li>
+</ol>
+<ol start="3">
+<li><p><strong>浏览器测试访问</strong></p>
+<p>在项目下的web/WEB-INF下有一个index.jsp,当我们启动成功的时候就会访问</p>
+<p><a href="http://localhost:9090/day02" target="_blank" rel="noopener">http://localhost:9090/day02</a> </p>
+<p>访问的就是day02下的index.jsp页面</p>
+</li>
+</ol>
+<h1 id="第2章-Servlet入门"><a href="#第2章-Servlet入门" class="headerlink" title="第2章 Servlet入门"></a>第2章 Servlet入门</h1><h2 id="2-1-Servlet2-5实现Hello-world例子"><a href="#2-1-Servlet2-5实现Hello-world例子" class="headerlink" title="2.1 Servlet2.5实现Hello world例子"></a>2.1 Servlet2.5实现Hello world例子</h2><h3 id="2-1-1-servlet的基本概述"><a href="#2-1-1-servlet的基本概述" class="headerlink" title="2.1.1 servlet的基本概述"></a>2.1.1 servlet的基本概述</h3><p>Servlet 运行在服务端的Java小程序，是sun公司提供一套规范，用来处理客户端请求、响应给浏览器的动态资源。但servlet的实质就是java代码，通过java的API动态的向客户端输出内容</p>
+<ol>
+<li><p><strong>查阅JavaEE手册（帮助文档）阅读Servlet规范</strong>：</p>
+<p><img src="34.png" alt></p>
+<p><strong>根据文档总结，书写servlet一个三个步骤</strong>：</p>
+<p><strong>1）创建一个class实现servlet接口</strong></p>
+<p><strong>2）重写service方法</strong></p>
+<p><strong>3）创建的类必须在web.xml文件中做配置</strong></p>
+</li>
+<li><p><strong>为什么要做配置？</strong></p>
+<p>答：必须将请求路径和java程序的对应关系建立起来。</p>
+</li>
+</ol>
+<h3 id="2-1-2-servlet与普通的java程序的区别"><a href="#2-1-2-servlet与普通的java程序的区别" class="headerlink" title="2.1.2 servlet与普通的java程序的区别"></a>2.1.2 servlet与普通的java程序的区别</h3><pre><code>1.必须实现servlet接口
+2.必须在servlet容器（服务器）中运行
+3.servlet程序可以接收用户请求参数以及向浏览器输出数据</code></pre><h3 id="2-1-3-代码实现servlet的步骤"><a href="#2-1-3-代码实现servlet的步骤" class="headerlink" title="2.1.3 代码实现servlet的步骤"></a>2.1.3 代码实现servlet的步骤</h3><ol>
+<li>在工程下创建cn.itcast.web包,在包下创建一个类实现 Servlet接口</li>
+<li>实现service方法</li>
+<li>在web.xml中配置书写好的servlet</li>
+</ol>
+<h3 id="2-1-4-servlet代码实现"><a href="#2-1-4-servlet代码实现" class="headerlink" title="2.1.4 servlet代码实现"></a>2.1.4 servlet代码实现</h3><p><strong>在cn.itcast.web包下创建一个类实现Servlet接口</strong></p>
+<p><img src="41.png" alt></p>
+<p>servlet代码：</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> cn<span class="token punctuation">.</span>itcast<span class="token punctuation">.</span>web<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>http<span class="token punctuation">.</span>HttpServlet<span class="token punctuation">;</span>
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>http<span class="token punctuation">.</span>HttpServletRequest<span class="token punctuation">;</span>
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>http<span class="token punctuation">.</span>HttpServletResponse<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>IOException<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DemoServlet</span> <span class="token keyword">implements</span> <span class="token class-name">Servlet</span><span class="token punctuation">{</span>
+
+  <span class="token annotation punctuation">@Override</span>
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">init</span><span class="token punctuation">(</span>ServletConfig servletConfig<span class="token punctuation">)</span> <span class="token keyword">throws</span> ServletException <span class="token punctuation">{</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token annotation punctuation">@Override</span>
+  <span class="token keyword">public</span> ServletConfig <span class="token function">getServletConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> null<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token annotation punctuation">@Override</span>
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">service</span><span class="token punctuation">(</span>ServletRequest servletRequest<span class="token punctuation">,</span> ServletResponse servletResponse<span class="token punctuation">)</span> <span class="token keyword">throws</span> ServletException<span class="token punctuation">,</span> IOException <span class="token punctuation">{</span>
+    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"第一个servlet程序"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token annotation punctuation">@Override</span>
+  <span class="token keyword">public</span> String <span class="token function">getServletInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> null<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token annotation punctuation">@Override</span>
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">destroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>​    Web.xml配置（该文件在web/WEB-INF 文件夹下）：</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">?</span>xml version<span class="token operator">=</span><span class="token string">"1.0"</span> encoding<span class="token operator">=</span><span class="token string">"UTF-8"</span><span class="token operator">?</span><span class="token operator">></span>
+  <span class="token operator">&lt;</span>web<span class="token operator">-</span>app xmlns<span class="token operator">=</span><span class="token string">"http://java.sun.com/xml/ns/javaee"</span>
+  xmlns<span class="token operator">:</span>xsi<span class="token operator">=</span><span class="token string">"http://www.w3.org/2001/XMLSchema-instance"</span>
+    xsi<span class="token operator">:</span>schemaLocation<span class="token operator">=</span>"http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>java<span class="token punctuation">.</span>sun<span class="token punctuation">.</span>com<span class="token operator">/</span>xml<span class="token operator">/</span>ns<span class="token operator">/</span>javaee
+      http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>java<span class="token punctuation">.</span>sun<span class="token punctuation">.</span>com<span class="token operator">/</span>xml<span class="token operator">/</span>ns<span class="token operator">/</span>javaee<span class="token operator">/</span>web<span class="token operator">-</span>app_2_5<span class="token punctuation">.</span>xsd"
+version<span class="token operator">=</span><span class="token string">"2.5"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>servlet<span class="token operator">></span>
+          <span class="token operator">&lt;</span>servlet<span class="token operator">-</span>name<span class="token operator">></span>DemoServlet<span class="token operator">&lt;</span><span class="token operator">/</span>servlet<span class="token operator">-</span>name<span class="token operator">></span>
+          <span class="token operator">&lt;</span>servlet<span class="token operator">-</span><span class="token keyword">class</span><span class="token operator">></span>cn<span class="token punctuation">.</span>itcast<span class="token punctuation">.</span>web<span class="token punctuation">.</span>DemoServlet<span class="token operator">&lt;</span><span class="token operator">/</span>servlet<span class="token operator">-</span><span class="token keyword">class</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>servlet<span class="token operator">></span>
+    <span class="token operator">&lt;</span>servlet<span class="token operator">-</span>mapping<span class="token operator">></span>
+        <span class="token operator">&lt;</span>servlet<span class="token operator">-</span>name<span class="token operator">></span>DemoServlet<span class="token operator">&lt;</span><span class="token operator">/</span>servlet<span class="token operator">-</span>name<span class="token operator">></span>
+        <span class="token operator">&lt;</span>url<span class="token operator">-</span>pattern<span class="token operator">></span><span class="token operator">/</span>demo<span class="token operator">&lt;</span><span class="token operator">/</span>url<span class="token operator">-</span>pattern<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>servlet<span class="token operator">-</span>mapping<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>web<span class="token operator">-</span>app<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>打开浏览器访问:</strong></p>
+<p><a href="http://localhost:9090/day02/demo" target="_blank" rel="noopener">http://localhost:9090/day02/demo</a> </p>
+<p>就可以在idea的控制台看到输出了”第一个servlet程序”</p>
+<h2 id="2-2-Servlet3-0实现Hello-world例子"><a href="#2-2-Servlet3-0实现Hello-world例子" class="headerlink" title="2.2 Servlet3.0实现Hello world例子"></a>2.2 Servlet3.0实现Hello world例子</h2><h3 id="2-2-1-Servlet2-5与Servlet3-0的区别"><a href="#2-2-1-Servlet2-5与Servlet3-0的区别" class="headerlink" title="2.2.1 Servlet2.5与Servlet3.0的区别"></a>2.2.1 Servlet2.5与Servlet3.0的区别</h3><p><strong>Servlet3.0相较于Servlet2.5：</strong></p>
+<p>​    <strong>新增了一些注解，简化的javaweb代码开发，可以省略web.xml配置文件</strong><br>​    <strong>支持异步处理（多线程技术）</strong><br>​    <strong>支持可插性特性（书写的代码编译后生成的class文件可以直接部署到其他项目的，自动加载执行）</strong></p>
+<h3 id="2-2-2-代码实现Servlet3-0步骤（注解配置servlet演示）"><a href="#2-2-2-代码实现Servlet3-0步骤（注解配置servlet演示）" class="headerlink" title="2.2.2 代码实现Servlet3.0步骤（注解配置servlet演示）"></a>2.2.2 代码实现Servlet3.0步骤（注解配置servlet演示）</h3><ol>
+<li><strong>创建JavaEE6(含6)以上的工程</strong></li>
+<li>创建servlet，在@WebServlet注解中添加urlPatterns = “/hello”，作为请求路径</li>
+</ol>
+<h3 id="2-2-3-注解开发servlet代码演示"><a href="#2-2-3-注解开发servlet代码演示" class="headerlink" title="2.2.3  注解开发servlet代码演示"></a>2.2.3  注解开发servlet代码演示</h3><ol>
+<li><p><strong>创建JavaEE6(含6)以上的工程：</strong></p>
+<p><img src="53.png" alt></p>
+<p><img src="54.png" alt></p>
+<p><img src="55.png" alt></p>
+</li>
+<li><p>注解开发servlet代码演示：</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> cn<span class="token punctuation">.</span>itcast<span class="token punctuation">.</span>web<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>WebServlet<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>IOException<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//name = "HelloServlet"：servlet名称，相当于web.xml中的&lt;servlet-name></span>
+<span class="token comment" spellcheck="true">//urlPatterns = "/hello"：servlet的访问路径，相当于&lt;url-pattern></span>
+<span class="token annotation punctuation">@WebServlet</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"HelloServlet"</span><span class="token punctuation">,</span>urlPatterns <span class="token operator">=</span> <span class="token string">"/hello"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloServlet</span> <span class="token keyword">implements</span> <span class="token class-name">Servlet</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">init</span><span class="token punctuation">(</span>ServletConfig servletConfig<span class="token punctuation">)</span> <span class="token keyword">throws</span> ServletException <span class="token punctuation">{</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> ServletConfig <span class="token function">getServletConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> null<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">service</span><span class="token punctuation">(</span>ServletRequest servletRequest<span class="token punctuation">,</span> ServletResponse servletResponse<span class="token punctuation">)</span> <span class="token keyword">throws</span> ServletException<span class="token punctuation">,</span> IOException <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"HelloServlet执行......."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> String <span class="token function">getServletInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> null<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">destroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>配置项目路径(配置过程参照1.9.2中第二步),启动tomcat服务器测试</p>
+<p>浏览器地址栏输入：<a href="http://localhost:8080/servlet2/hello" target="_blank" rel="noopener">http://localhost:8080/servlet2/hello</a></p>
+<p>测试成功：<img src="58.png" alt></p>
+</li>
+</ol>
+<h1 id="第3章-Servlet的体系结构"><a href="#第3章-Servlet的体系结构" class="headerlink" title="第3章 Servlet的体系结构"></a>第3章 Servlet的体系结构</h1><h2 id="3-1-Servlet的体系结构概述"><a href="#3-1-Servlet的体系结构概述" class="headerlink" title="3.1 Servlet的体系结构概述"></a>3.1 Servlet的体系结构概述</h2><p>​    目前我们已经学会创建一个类实现sevlet接口的方式开发Servlet程序，实现Servlet接口的时候，我们必须实现接口的所有方法。但是，在servlet中，真正执行程序逻辑的是service，对于servlet的初始化和销毁，由服务器调用执行，开发者本身不需要关心。因此，有没有一种更加简洁的方式来开发servlet程序呢？</p>
+<p>我们先来查阅API回顾Servlet接口：<br><img src="301.png" alt></p>
+<p>由上图可知在servlet接口规范下，官方推荐使用继承的方式，继承GenericServlet 或者HttpServlet来实现接口，那么我们接下来再去查看一下这两个类的API：</p>
+<p><strong>GenericServlet ：</strong></p>
+<p><img src="302.png" alt></p>
+<p>阅读上图API可知，GenericServlet 是一个类，它简化了servlet的开发，已经提供好了一些servlet接口所需的方法，我们开发者只需要重写service方法即可</p>
+<p>我们来使用GenericServlet 创建servlet：</p>
+<ol>
+<li>创建一个类</li>
+<li>继承GenericServlet</li>
+<li>重写service方法</li>
+</ol>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> cn<span class="token punctuation">.</span>itcast<span class="token punctuation">.</span>web<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>GenericServlet<span class="token punctuation">;</span>
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>ServletException<span class="token punctuation">;</span>
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>ServletRequest<span class="token punctuation">;</span>
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>ServletResponse<span class="token punctuation">;</span>
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>WebServlet<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>IOException<span class="token punctuation">;</span>
+
+<span class="token annotation punctuation">@WebServlet</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"GenericDemoServlet"</span><span class="token punctuation">,</span>urlPatterns <span class="token operator">=</span> <span class="token string">"/generic"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">GenericDemoServlet</span> <span class="token keyword">extends</span> <span class="token class-name">GenericServlet</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">service</span><span class="token punctuation">(</span>ServletRequest servletRequest<span class="token punctuation">,</span> ServletResponse servletResponse<span class="token punctuation">)</span> <span class="token keyword">throws</span> ServletException<span class="token punctuation">,</span> IOException <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"GenericDemoServlet执行......."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>虽然，GenericServlet已经简化了servlet开发，但是我们平时开发程序需要按照一种互联网传输数据的协议来开发程序——http协议，因此，sun公司又专门提供了HttpServlet，来适配这种协议下的开发。</p>
+<p><strong>HttpServlet：</strong></p>
+<p><img src="303.png" alt></p>
+<p>阅读上图的API可知，继承HttpServlet，我们需要重写doGet、doPost等方法中一个即可，根据Http不同的请求，我们需要实现相应的方法。</p>
+<p>我们来使用HttpServlet创建servlet：    </p>
+<ol>
+<li>创建一个类</li>
+<li>继承HttpServlet</li>
+<li>重写doGet方法</li>
+</ol>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> cn<span class="token punctuation">.</span>itcast<span class="token punctuation">.</span>web<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>ServletException<span class="token punctuation">;</span>
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>WebServlet<span class="token punctuation">;</span>
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>http<span class="token punctuation">.</span>HttpServlet<span class="token punctuation">;</span>
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>http<span class="token punctuation">.</span>HttpServletRequest<span class="token punctuation">;</span>
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>http<span class="token punctuation">.</span>HttpServletResponse<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>IOException<span class="token punctuation">;</span>
+
+<span class="token annotation punctuation">@WebServlet</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"HttpDemoServlet"</span><span class="token punctuation">,</span>urlPatterns <span class="token operator">=</span> <span class="token string">"/http"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HttpDemoServlet</span> <span class="token keyword">extends</span> <span class="token class-name">HttpServlet</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">doGet</span><span class="token punctuation">(</span>HttpServletRequest req<span class="token punctuation">,</span> HttpServletResponse resp<span class="token punctuation">)</span> <span class="token keyword">throws</span> ServletException<span class="token punctuation">,</span> IOException <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"HttpDemoServlet执行......."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>通过以上两个API阅读，同学们注意一个细节HttpServlet是GenericServlet的子类，它增强了GenericServlet一些功能，因此，在后期使用的时候，我们都是选择继承HttpServlet来开发servlet程序。</p>
+<p>虽然目前开发servlet的选择继承类，已经确定，但是另一个问题一直还在我们头脑中，那就是我们学的这些浏览器、服务器、servlet等，到底是如何运行的？</p>
+<p>那么接下来，我们来看看servlet的运行原理。</p>
+<h2 id="3-2-servlet运行原理"><a href="#3-2-servlet运行原理" class="headerlink" title="3.2 servlet运行原理"></a>3.2 servlet运行原理</h2><p><img src="304.png" alt></p>
+<p><strong>总结</strong></p>
+<pre><code>通过上述流程图我们重点需要掌握如下几个点：
+    1. Servlet对象是由服务器创建
+    2. request与response对象也是由tomcat服务器创建
+    3. request对象封装了浏览器过来的所有请求信息，response对象代表了服务器的响应信息。
+</code></pre><h1 id="第4章-Servlet生命周期"><a href="#第4章-Servlet生命周期" class="headerlink" title="第4章 Servlet生命周期"></a>第4章 Servlet生命周期</h1><h2 id="4-1-Servlet生命周期的概述"><a href="#4-1-Servlet生命周期的概述" class="headerlink" title="4.1  Servlet生命周期的概述"></a>4.1  Servlet生命周期的概述</h2><h3 id="4-1-1-什么是生命周期"><a href="#4-1-1-什么是生命周期" class="headerlink" title="4.1.1 什么是生命周期"></a>4.1.1 什么是生命周期</h3><p>​    一个对象从创建到消亡的过程，就是生命周期。因此，对Servlet生命周期的学习，我们就是研究Servlet什么时候生，什么时候死。</p>
+<h2 id="4-2-servlet生命周期相关的方法"><a href="#4-2-servlet生命周期相关的方法" class="headerlink" title="4.2  servlet生命周期相关的方法"></a>4.2  servlet生命周期相关的方法</h2><p>​    首先我们来回顾servlet接口的文档内容，其中一部分如图所示：</p>
+<p><img src="401.png" alt></p>
+<h3 id="4-2-1-API-介绍"><a href="#4-2-1-API-介绍" class="headerlink" title="4.2.1 API 介绍"></a>4.2.1 API 介绍</h3><p>​    上图中，我们注意到两个点，servlet的创建和销毁由两个相关的方法init方法和destroy方法</p>
+<ol>
+<li><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">void</span> <span class="token function">destroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 销毁servlet的方法
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">void</span> <span class="token function">init</span><span class="token punctuation">(</span>ServletConfig config<span class="token punctuation">)</span>  初始化servlet的方法
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+</ol>
+<p>我们可以调用测试一下这两个方法：</p>
+<h3 id="4-2-2-使用步骤"><a href="#4-2-2-使用步骤" class="headerlink" title="4.2.2 使用步骤"></a>4.2.2 使用步骤</h3><ol>
+<li>创建LifeCircleServlet初始化</li>
+<li>复写init、service、destroy方法</li>
+<li>访问servlet测试初始化LifeCircleServlet</li>
+<li>关闭服务器测试销毁LifeCircleServlet</li>
+</ol>
+<h3 id="4-2-3-演示代码"><a href="#4-2-3-演示代码" class="headerlink" title="4.2.3 演示代码"></a>4.2.3 演示代码</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> cn<span class="token punctuation">.</span>itcast<span class="token punctuation">.</span>web<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>ServletException<span class="token punctuation">;</span>
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>ServletRequest<span class="token punctuation">;</span>
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>ServletResponse<span class="token punctuation">;</span>
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>WebServlet<span class="token punctuation">;</span>
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>http<span class="token punctuation">.</span>HttpServlet<span class="token punctuation">;</span>
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>http<span class="token punctuation">.</span>HttpServletRequest<span class="token punctuation">;</span>
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>http<span class="token punctuation">.</span>HttpServletResponse<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>IOException<span class="token punctuation">;</span>
+
+<span class="token annotation punctuation">@WebServlet</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"LifeCircleServlet"</span><span class="token punctuation">,</span>urlPatterns <span class="token operator">=</span> <span class="token string">"/life"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">LifeCircleServlet</span> <span class="token keyword">extends</span> <span class="token class-name">HttpServlet</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> ServletException <span class="token punctuation">{</span>
+        <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"LifeCircleServlet初始化。。。"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">service</span><span class="token punctuation">(</span>ServletRequest req<span class="token punctuation">,</span> ServletResponse res<span class="token punctuation">)</span> <span class="token keyword">throws</span> ServletException<span class="token punctuation">,</span> IOException <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"LifeCircleServlet执行。。。"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">destroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">destroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"LifeCircleServlet销毁。。。"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>效果：</p>
+<pre class="line-numbers language-java"><code class="language-java">访问servlet：
+LifeCircleServlet初始化。。。
+LifeCircleServlet执行。。。
+
+关闭tomcat服务器：
+LifeCircleServlet销毁。。。
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="4-3-servlet生命周期流程"><a href="#4-3-servlet生命周期流程" class="headerlink" title="4.3  servlet生命周期流程"></a>4.3  servlet生命周期流程</h2><p>虽然简单使用过了servlet生命周期相关的方法，但是servlet从创建到销毁的过程对大家来说还是没说清楚，因此，我们以时序图的方式给大家展示了servlet的运行过程，注意图中每一步都由序号，按照序号查看每一个步骤。</p>
+<p><img src="402.png" alt></p>
+<p>附：servlet在初始化一次之后，就不再创建，因此如果多次访问同一个servlet的效果是这样的：</p>
+<pre class="line-numbers language-java"><code class="language-java">LifeCircleServlet初始化。。。
+LifeCircleServlet执行。。。
+LifeCircleServlet执行。。。
+LifeCircleServlet执行。。。
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>因此servlet是一个单例对象。</p>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://www.luv19.com" rel="external nofollow noreferrer">仙水忍</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://www.luv19.com/2019/04/27/2019-04-27-tomcat-servlet-ru-men/">http://www.luv19.com/2019/04/27/2019-04-27-tomcat-servlet-ru-men/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="http://www.luv19.com" target="_blank">仙水忍</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Tomcat/">
+                                    <span class="chip bg-color">Tomcat</span>
+                                </a>
+                            
+                                <a href="/tags/Servlet/">
+                                    <span class="chip bg-color">Servlet</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2019/05/05/2019-05-05-linux-chang-yong-cao-zuo-zhi-ling/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/270.jpg" class="responsive-img" alt="Linux常用操作指令">
+                        
+                        <span class="card-title">Linux常用操作指令</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Linux常用操作指令汇总（不断更新）。
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-05-05
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Linux/" class="post-category">
+                                    Linux
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/操作指令/">
+                        <span class="chip bg-color">操作指令</span>
+                    </a>
+                    
+                    <a href="/tags/Linux基础/">
+                        <span class="chip bg-color">Linux基础</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/04/25/2019-04-25-ajax-json/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/225.jpg" class="responsive-img" alt="ajax&json">
+                        
+                        <span class="card-title">ajax&json</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            ajax异步，json的相关操作。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-04-25
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/HTML/" class="post-category">
+                                    HTML
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Ajax/">
+                        <span class="chip bg-color">Ajax</span>
+                    </a>
+                    
+                    <a href="/tags/Json/">
+                        <span class="chip bg-color">Json</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 仙水忍<br />'
+            + '文章作者: 仙水忍<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+    
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+
+<!-- 代码块折行 -->
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+		    Copyright&nbsp;&copy;
+            <span id="year">年份</span>
+            <a href="http://www.luv19.com" target="_blank">仙水忍</a>
+&nbsp;
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    window.setTimeout("siteTime()", 1000);
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2019";
+                    var startMonth = "2";
+                    var startDate = "19";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "已运行 " + diffDays + " 天 " + diffHours +
+                            " 时 " + diffMinutes + " 分 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "已运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 时 " + diffMinutes + " 分 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+	    
+
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点字数:&nbsp;<span
+                class="white-color">67.7k</span>&nbsp;字
+            
+			
+			<br>
+            
+			
+            
+            
+            
+			
+            
+            <span id="icp"><img src="/medias/icp.png" theme.icp.title style="vertical-align: text-bottom;" />
+                <a href="http://www.beian.miit.gov.cn/" target="_blank">鲁ICP备20002018号-1</a>
+            </span>
+            
+			&nbsp;
+            
+            <span id="busuanzi_container_site_pv">
+                &nbsp;<i class="far fa-eye"></i>&nbsp;访问总量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+			
+			
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+
+
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://www.github.com/fishyo9" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:fishyo9@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="https://www.facebook.com/llfishyo" class="tooltipped" target="_blank" data-tooltip="关注我的Facebook: https://www.facebook.com/llfishyo" data-position="top" data-delay="50">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+
+
+
+    <a href="https://twitter.com/fishyo9" class="tooltipped" target="_blank" data-tooltip="关注我的Twitter: https://twitter.com/fishyo9" data-position="top" data-delay="50">
+        <i class="fab fa-twitter"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=188197110" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 188197110" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
+    
+
+    
+
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+	
+<!-- 动态标题 -->
+    <script type="text/javascript"> var OriginTitile = document.title,
+    st; document.addEventListener("visibilitychange", 
+    function () { document.hidden ? (document.title = "せんすいしのぶ",
+    clearTimeout(st)) : (document.title = "せんすいしのぶ", st = setTimeout(function () 
+    { document.title = OriginTitile }, 3e3)) }) 
+    </script>
+
+<!-- 雪花特效 -->
+    
+
+<!-- 网站预加载js脚本 -->
+   <script src="../source/js/instant.page.js" type="module"></script>
+
+</body>
+</html>
